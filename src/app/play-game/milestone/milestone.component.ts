@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Milestone} from "../../backend/milestone";
+import {GameState} from "../../backend/game-state";
 
 @Component({
   selector: 'app-milestone',
@@ -7,22 +8,12 @@ import {Milestone} from "../../backend/milestone";
   styleUrls: ['./milestone.component.css']
 })
 export class MilestoneComponent implements OnInit {
+  @Input() gameState: GameState;
   @Input() milestone: Milestone;
   @Input() achieved: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  getAchievedClass() : String {
-    if (this.achieved) {
-      return 'achieved'
-    }
-    return 'not-achieved'
-  }
-
-  showDetails() {
-    alert(this.milestone.requirements)
   }
 }

@@ -35,9 +35,8 @@
       milestones:
     </p>
     <ul>
-      <li>Money hoarder (20 points): you have X money.</li>
-      <li>Money farmer (10 points): you have X money production.</li>
-      <li>Production farmer (10 points): you have X point production.</li>
+      <li *ngFor="let milestone of getAllMilestones()">
+        {{ milestone.name }} ({{milestone.pointsReward}} points): {{ milestone.requirements }}.</li>
     </ul>
     <h2>Cards</h2>
     <p>

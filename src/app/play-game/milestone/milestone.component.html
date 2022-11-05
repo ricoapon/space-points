@@ -1,3 +1,17 @@
-<img src="assets/milestones/M{{milestone.milestoneId}}.png"
-     alt="{{ milestone.requirements }}"
-    [class]="getAchievedClass()" (click)="showDetails()">
+<div class="s-card border"
+     [class]="achieved ? 'border-success' : 'border-danger'">
+  <div class="s-card-cost-container">
+    <span>
+      {{ milestone.pointsReward }}
+    </span>
+  </div>
+
+  <div class="s-card-title">
+    <h3>{{ milestone.name }}</h3>
+    {{ milestone.requirements }}
+  </div>
+
+  <div class="s-card-description">
+    {{ milestone.progression(this.gameState) }} / {{ milestone.maxProgression }}
+  </div>
+</div>

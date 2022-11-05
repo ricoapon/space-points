@@ -77,7 +77,7 @@ export class Game {
         continue
       }
 
-      if (milestone.isAchieved(this.gameState)) {
+      if (milestone.progression(this.gameState) >= milestone.maxProgression) {
         this.gameState.achievedMilestoneIds.push(milestone.milestoneId)
         this.gameState.points += milestone.pointsReward
       }

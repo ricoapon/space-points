@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {allMilestones, Milestone} from "../backend/milestone";
 
 @Component({
   selector: 'app-tutorial',
@@ -12,4 +13,7 @@ export class TutorialComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getAllMilestones(): Milestone[] {
+    return allMilestones()
+  }
 }
