@@ -21,4 +21,8 @@ export class MilestoneComponent implements OnInit {
     }
     return 'not-achieved'
   }
+
+  showDetails() {
+    alert(this.milestone.requirements)
+  }
 }

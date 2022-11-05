@@ -1,3 +1,3 @@
 <img src="assets/milestones/M{{milestone.milestoneId}}.png"
-     alt="{{ milestone.name }}"
-    [class]="getAchievedClass()">
+     alt="{{ milestone.requirements }}"
+    [class]="getAchievedClass()" (click)="showDetails()">
