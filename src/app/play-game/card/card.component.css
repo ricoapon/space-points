@@ -1,10 +1,14 @@
 .s-card {
   /* Transparent background color. */
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   padding: 5px;
   height: 200px;
   width: 156px;
   border-radius: 5px;
+}
+
+.s-card:hover {
+  background-color: var(--bs-primary);
 }
 
 .s-card-cost-container {
