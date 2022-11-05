@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="col" *ngFor="let card of shownCards">
+<div class="row justify-content-center">
+  <div class="col-auto mb-1" *ngFor="let card of shownCards">
     <app-card [card]="card" (selectCard)="selectCard.emit($event)"></app-card>
   </div>
 </div>

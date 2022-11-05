@@ -1,11 +1,45 @@
-.card {
+.s-card {
   /* Transparent background color. */
   background-color: rgba(0,0,0,0);
+  padding: 5px;
+  height: 200px;
+  width: 156px;
+  border-radius: 5px;
 }
 
-.card-img-top {
-  max-width: 100px;
-  display: block;
+.s-card-cost-container {
+  width: 100%;
+}
+
+.s-card-cost-container > span {
+  color: black;
+  background: var(--bs-warning);
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
+  line-height: 26px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 6px;
+}
+
+.s-card-image-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.s-card-image-container > img {
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
+
+.s-card-title {
+  text-align: center;
+}
+
+.s-card-description {
+  text-align: center;
+}
+
