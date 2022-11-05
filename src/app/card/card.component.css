@@ -1,0 +1,11 @@
+.card {
+  /* Transparent background color. */
+  background-color: rgba(0,0,0,0);
+}
+
+.card-img-top {
+  max-width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
