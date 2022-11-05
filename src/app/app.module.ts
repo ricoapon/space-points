@@ -10,6 +10,7 @@ import {MilestoneComponent} from './play-game/milestone/milestone.component';
 import {PlayGameComponent} from './play-game/play-game.component';
 import {StartScreenComponent} from './start-screen/start-screen.component';
 import {AppRoutingModule} from "./app-routing.module";
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {AppRoutingModule} from "./app-routing.module";
     CardContainerComponent,
     MilestoneComponent,
     PlayGameComponent,
-    StartScreenComponent
+    StartScreenComponent,
+    TutorialComponent
   ],
   imports: [
     BrowserModule,
