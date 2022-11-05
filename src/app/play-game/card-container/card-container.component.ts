@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Card} from "../backend/card";
+import {Card} from "../../backend/card";
 
 @Component({
   selector: 'app-card-container',

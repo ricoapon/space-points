@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {GameState} from "../backend/game-state";
-import {Milestone} from "../backend/milestone";
+import {GameState} from "../../backend/game-state";
+import {Milestone} from "../../backend/milestone";
 
 @Component({
   selector: 'app-milestone-container',

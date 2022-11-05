@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {GameState} from "../backend/game-state";
+import {GameState} from "../../backend/game-state";
 
 @Component({
   selector: 'app-dashboard',

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Milestone} from "../backend/milestone";
+import {Milestone} from "../../backend/milestone";
 
 @Component({
   selector: 'app-milestone',
