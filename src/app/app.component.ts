@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import {Game} from "./backend/game";
-import {Card} from "./backend/card";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +6,5 @@ import {Card} from "./backend/card";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  game: Game;
-  shownCards: Card[];
 
-  constructor(game: Game) {
-    this.game = game;
-    this.shownCards = this.game.start();
-  }
-
-  pickCard(cardId: number) {
-    this.shownCards = this.game.pickCard(cardId);
-  }
 }
