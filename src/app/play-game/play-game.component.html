@@ -1,5 +1,5 @@
 <div class="vertical-center">
-  <div class="container">
+  <div *ngIf="!finishedGame" class="container">
     <div class="row mb-4">
       <app-dashboard [gameState]="this.game.getGameState()"></app-dashboard>
     </div>
@@ -11,5 +11,9 @@
     <div class="row">
       <app-milestone-container [gameState]="this.game.getGameState()"></app-milestone-container>
     </div>
+  </div>
+  <div *ngIf="finishedGame" class="container text-center">
+    <h1>Congratulations! You finished the game with {{ this.finalPoints }} points.</h1>
+    <a routerLink="/" class="btn btn-lg btn-primary">Back to menu</a>
   </div>
 </div>

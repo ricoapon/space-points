@@ -4,8 +4,20 @@ import {allCards, allCardsWithoutProduce, Card, cardProduce} from "./card";
 import {allMilestones} from "./milestone";
 import {Randomizer} from "./randomizer";
 
+export enum GameEventType {
+  NEWLY_SELECTED_CARDS,
+  FINISHED_GAME,
+}
+
+export type GameEvent = {
+  gameEventType: GameEventType,
+  cards?: Card[],
+  finalPoints?: number,
+}
+
 @Injectable({providedIn: 'root'})
 export class Game {
+  private readonly MAX_NUMBER_OF_TURNS = 20
   private gameState: GameState;
   private randomizer: Randomizer;
 
@@ -20,11 +32,22 @@ export class Game {
     return this.determineNextCards();
   }
 
-  public pickCard(cardId: number): Card[] {
+  public pickCard(cardId: number): GameEvent {
     this.playCard(cardId);
     this.checkAchievedMilestones();
     this.gameState.turnCounter += 1;
-    return this.determineNextCards();
+
+    if (this.MAX_NUMBER_OF_TURNS < this.gameState.turnCounter) {
+      return {
+        gameEventType: GameEventType.FINISHED_GAME,
+        finalPoints: this.gameState.points,
+      }
+    }
+
+    return {
+      gameEventType: GameEventType.NEWLY_SELECTED_CARDS,
+      cards: this.determineNextCards(),
+    };
   }
 
   private determineNextCards(): Card[] {

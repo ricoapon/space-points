@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Game} from "../backend/game";
+import {Game, GameEventType} from "../backend/game";
 import {Card} from "../backend/card";
 
 @Component({
@@ -10,6 +10,8 @@ import {Card} from "../backend/card";
 export class PlayGameComponent {
   game: Game;
   shownCards: Card[];
+  finishedGame: boolean = false;
+  finalPoints: number;
 
   constructor(game: Game) {
     this.game = game;
@@ -17,6 +19,15 @@ export class PlayGameComponent {
   }
 
   pickCard(cardId: number) {
-    this.shownCards = this.game.pickCard(cardId);
+    const gameEvent = this.game.pickCard(cardId);
+    switch (gameEvent.gameEventType) {
+      case GameEventType.FINISHED_GAME:
+        this.finishedGame = true;
+        this.finalPoints = gameEvent.finalPoints!;
+        break;
+      case GameEventType.NEWLY_SELECTED_CARDS:
+        this.shownCards = gameEvent.cards!;
+        break;
+    }
   }
 }
