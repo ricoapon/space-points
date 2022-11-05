@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:github-pages": "ng build --prod && cp dist/space-points/index.html dist/space-points/404.html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
