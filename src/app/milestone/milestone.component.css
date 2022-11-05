@@ -1,0 +1,11 @@
+img {
+  max-width: 100px;
+}
+
+.achieved {
+  opacity: 100%;
+}
+
+.not-achieved {
+  opacity: 50%;
+}

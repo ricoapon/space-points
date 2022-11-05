@@ -1,40 +1,16 @@
-<div id="container" class="h-100 d-flex align-items-center justify-content-center">
-  <div class="row">
-    <div class="col">
-
-      <h1>Resources</h1>
-      <table>
-        <tbody>
-        <tr>
-          <td>Points</td>
-          <td>{{ this.game.getGameState().points }}</td>
-        </tr>
-        <tr>
-          <td>Money</td>
-          <td>{{ this.game.getGameState().money }}</td>
-        </tr>
-        </tbody>
-      </table>
-
-      <h1>Production</h1>
-      <table>
-        <tbody>
-        <tr>
-          <td>Point Production</td>
-          <td>{{ this.game.getGameState().pointProduction }}</td>
-        </tr>
-        <tr>
-          <td>Money Production</td>
-          <td>{{ this.game.getGameState().moneyProduction }}</td>
-        </tr>
-        </tbody>
-      </table>
-
-      <button class="btn btn-primary" (click)="produce()">Skip and produce</button>
+<div class="h-100 d-flex align-items-center justify-content-center">
+  <div class="container">
+    <div class="row mb-4">
+      <app-dashboard [gameState]="this.game.getGameState()"></app-dashboard>
     </div>
 
-    <div class="col" *ngFor="let card of shownCards">
-      <app-card [card]="card" (selectCard)="pickCard($event)"></app-card>
+    <div class="row mb-4">
+      <app-card-container [shownCards]="shownCards" (selectCard)="pickCard($event)"></app-card-container>
     </div>
+
+    <div class="row">
+      <app-milestone-container [gameState]="this.game.getGameState()"></app-milestone-container>
+    </div>
+
   </div>
 </div>
