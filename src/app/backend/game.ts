@@ -2,10 +2,12 @@ import {Injectable} from "@angular/core";
 import {GameState} from "./game-state";
 import {Card} from "./card";
 import {allMilestones} from "./milestone";
+import {Randomizer} from "./randomizer";
 
 @Injectable({providedIn: 'root'})
 export class Game {
   private gameState: GameState;
+  private randomizer: Randomizer;
 
   public getGameState(): GameState {
     return this.gameState;
@@ -13,7 +15,8 @@ export class Game {
 
   public start(): Card[] {
     this.gameState = new GameState();
-    this.gameState.milestonesInGame = allMilestones();
+    this.randomizer = new Randomizer();
+    this.gameState.milestonesInGame = this.randomizer.getRandomElementsFromArray(allMilestones(), 3);
     return this.determineNextCards();
   }
 
