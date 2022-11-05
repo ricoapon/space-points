@@ -16,8 +16,8 @@ export class MilestoneContainerComponent implements OnInit {
   }
 
   achievedMilestone(milestone: Milestone): boolean {
-    for (let achievedMilestone of this.gameState.achievedMilestones) {
-      if (milestone.milestoneId == achievedMilestone.milestoneId) {
+    for (let achievedMilestoneId of this.gameState.achievedMilestoneIds) {
+      if (milestone.milestoneId == achievedMilestoneId) {
         return true;
       }
     }

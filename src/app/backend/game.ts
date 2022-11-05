@@ -17,6 +17,7 @@ export class Game {
 
   public pickCard(cardId: number): Card[] {
     this.playCard(cardId);
+    this.checkAchievedMilestones();
     this.gameState.turnCounter += 1;
     return this.determineNextCards();
   }
@@ -54,6 +55,7 @@ export class Game {
     if (cardId == -1) {
       this.gameState.money += this.gameState.moneyProduction
       this.gameState.points += this.gameState.pointProduction
+      this.gameState.productionCounter += 1
     } else if (cardId == 0) {
       this.gameState.money -= 1;
       this.gameState.money += 5;
@@ -63,6 +65,18 @@ export class Game {
     } else if (cardId == 2) {
       this.gameState.money -= 20;
       this.gameState.points += 5;
+    }
+  }
+
+  private checkAchievedMilestones() {
+    for (let milestone of this.gameState.milestonesInGame) {
+      if (milestone.milestoneId in this.gameState.achievedMilestoneIds) {
+        continue
+      }
+
+      if (milestone.isAchieved(this.gameState)) {
+        this.gameState.achievedMilestoneIds.push(milestone.milestoneId)
+      }
     }
   }
 }
