@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: '', component: StartScreenComponent},
   {path: 'game', component: PlayGameComponent},
   {path: 'tutorial', component: TutorialComponent},
-  {path: '**', component: StartScreenComponent},
+  {path: '**', redirectTo: '/',},
 ];
 
 @NgModule({
