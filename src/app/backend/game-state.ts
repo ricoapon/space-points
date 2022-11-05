@@ -1,8 +1,7 @@
-import {Injectable} from "@angular/core";
 import {Milestone} from "./milestone";
 
-@Injectable({providedIn: 'root'})
 export class GameState {
+  public turnCounter = 1
   public money = 15
   public points = 0
   public moneyProduction = 1

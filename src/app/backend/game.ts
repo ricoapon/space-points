@@ -4,22 +4,20 @@ import {Card} from "./card";
 
 @Injectable({providedIn: 'root'})
 export class Game {
-  private readonly gameState: GameState;
-
-  constructor(gameState: GameState) {
-    this.gameState = gameState;
-  }
+  private gameState: GameState;
 
   public getGameState(): GameState {
     return this.gameState;
   }
 
   public start(): Card[] {
+    this.gameState = new GameState();
     return this.determineNextCards();
   }
 
   public pickCard(cardId: number): Card[] {
     this.playCard(cardId);
+    this.gameState.turnCounter += 1;
     return this.determineNextCards();
   }
 
