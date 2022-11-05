@@ -5,7 +5,7 @@
     </div>
 
     <div class="row mb-4">
-      <app-card-container [shownCards]="shownCards" (selectCard)="pickCard($event)"></app-card-container>
+      <app-card-container [shownCards]="shownCards" [gameState]="this.game.getGameState()" (selectCard)="pickCard($event)"></app-card-container>
     </div>
 
     <div class="row">

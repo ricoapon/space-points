@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {Card} from "../../backend/card";
+import {GameState} from "../../backend/game-state";
 
 @Component({
   selector: 'app-card-container',
@@ -8,6 +9,7 @@ import {Card} from "../../backend/card";
 })
 export class CardContainerComponent implements OnChanges {
   @Input() shownCards: Card[];
+  @Input() gameState: GameState;
   @Output() selectCard: EventEmitter<number> = new EventEmitter<number>()
   disableCards = false;
 
@@ -17,4 +19,7 @@ export class CardContainerComponent implements OnChanges {
     this.disableCards = false;
   }
 
+  canBeBought(card: Card) {
+    return card.cost <= this.gameState.money;
+  }
 }

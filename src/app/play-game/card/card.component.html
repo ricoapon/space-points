@@ -1,4 +1,7 @@
-<div class="s-card border border-primary" (click)="clickOnCard()" [@flipState]="flipState">
+<div class="s-card border border-primary"
+     (click)="clickOnCard()"
+     [@flipState]="flipState"
+     [class]="canBeBought ? 'can-be-bought border-primary' : 'can-not-be-bought border-danger'">
   <div class="s-card-cost-container">
     <span>
       {{ card.cost }}

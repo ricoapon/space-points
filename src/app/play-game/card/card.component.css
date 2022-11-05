@@ -7,7 +7,10 @@
   border-radius: 5px;
 }
 
-.s-card:hover {
+.can-not-be-bought:hover {
+  background-color: var(--bs-danger);
+}
+.can-be-bought:hover {
   background-color: var(--bs-primary);
 }
 

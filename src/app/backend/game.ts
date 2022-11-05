@@ -39,6 +39,11 @@ export class Game {
     if (card == undefined) {
       throw new Error("Cannot find card with id " + cardId)
     }
+
+    if (this.gameState.money < card.cost) {
+      throw new Error("Don't have enough money to buy card")
+    }
+
     this.gameState.money -= card.cost;
     card.execute(this.gameState)
   }

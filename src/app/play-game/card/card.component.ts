@@ -17,6 +17,7 @@ import {Card} from "../../backend/card";
 })
 export class CardComponent implements OnInit {
   @Input() card: Card;
+  @Input() canBeBought: boolean;
   @Input() disableCard: boolean;
   @Output() selectCard: EventEmitter<number> = new EventEmitter<number>()
   @Output() disableOtherCards: EventEmitter<boolean> = new EventEmitter<boolean>()
@@ -26,7 +27,7 @@ export class CardComponent implements OnInit {
   }
 
   clickOnCard() {
-    if (this.disableCard) {
+    if (this.disableCard || !this.canBeBought) {
       return
     }
 
