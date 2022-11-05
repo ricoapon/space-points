@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {GameState} from "./game-state";
 import {Card} from "./card";
+import {allMilestones} from "./milestone";
 
 @Injectable({providedIn: 'root'})
 export class Game {
@@ -12,6 +13,7 @@ export class Game {
 
   public start(): Card[] {
     this.gameState = new GameState();
+    this.gameState.milestonesInGame = allMilestones();
     return this.determineNextCards();
   }
 
@@ -70,12 +72,13 @@ export class Game {
 
   private checkAchievedMilestones() {
     for (let milestone of this.gameState.milestonesInGame) {
-      if (milestone.milestoneId in this.gameState.achievedMilestoneIds) {
+      if (this.gameState.achievedMilestoneIds.some(x => x == milestone.milestoneId)) {
         continue
       }
 
       if (milestone.isAchieved(this.gameState)) {
         this.gameState.achievedMilestoneIds.push(milestone.milestoneId)
+        this.gameState.points += milestone.pointsReward
       }
     }
   }
