@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import {Card} from "../../backend/card";
 
 @Component({
@@ -6,13 +6,15 @@ import {Card} from "../../backend/card";
   templateUrl: './card-container.component.html',
   styleUrls: ['./card-container.component.css']
 })
-export class CardContainerComponent implements OnInit {
+export class CardContainerComponent implements OnChanges {
   @Input() shownCards: Card[];
   @Output() selectCard: EventEmitter<number> = new EventEmitter<number>()
+  disableCards = false;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
+    this.disableCards = false;
   }
 
 }

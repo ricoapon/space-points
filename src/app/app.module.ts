@@ -11,6 +11,7 @@ import {PlayGameComponent} from './play-game/play-game.component';
 import {StartScreenComponent} from './start-screen/start-screen.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { TutorialComponent } from './tutorial/tutorial.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TutorialComponent } from './tutorial/tutorial.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

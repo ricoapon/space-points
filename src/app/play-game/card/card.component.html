@@ -1,4 +1,4 @@
-<div class="s-card border border-primary" (click)="selectCard.emit(card.cardId)">
+<div class="s-card border border-primary" (click)="clickOnCard()" [@flipState]="flipState">
   <div class="s-card-cost-container">
     <span>
       {{ card.cost }}
