@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Action, Game} from "./backend/game";
+import {Game} from "./backend/game";
 import {Card} from "./backend/card";
 
 @Component({
@@ -17,10 +17,6 @@ export class AppComponent {
   }
 
   pickCard(cardId: number) {
-    this.shownCards = this.game.doAction(Action.PICK_CARD, cardId);
-  }
-
-  produce() {
-    this.shownCards = this.game.doAction(Action.SKIP_CARD_AND_PRODUCE);
+    this.shownCards = this.game.pickCard(cardId);
   }
 }
