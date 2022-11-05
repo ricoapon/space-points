@@ -11,7 +11,6 @@ export class Randomizer {
     } else {
       this.generator = new XORShift(seed);
     }
-    console.log("Initialized");
   }
 
   next(inclusiveMax: number): number {
@@ -22,7 +21,7 @@ export class Randomizer {
     const result: T[] = []
 
     while (array.length >= 1 && elementsToPick > 0) {
-      const randomIndex = this.next(array.length - 1);
+      const randomIndex = this.next(array.length);
       result.push(array[randomIndex]);
       array.splice(randomIndex, 1);
       elementsToPick -= 1;
