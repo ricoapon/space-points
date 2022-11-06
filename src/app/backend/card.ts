@@ -29,15 +29,6 @@ export function cardProduce(): Card {
 export function allCardsWithoutProduce(): Card[] {
   return [
     {
-      cardId: 0,
-      title: "Money",
-      description: "Get 5 money",
-      cost: 1,
-      execute: (gameState: GameState) => {
-        gameState.money += 5
-      }
-    },
-    {
       cardId: 1,
       title: "Money Production",
       description: "Get 5 money production",

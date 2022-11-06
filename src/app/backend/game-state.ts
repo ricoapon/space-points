@@ -8,10 +8,10 @@ export class GameState {
   public maxNrOfTurns = INITIAL_MAX_NR_OF_TURNS
   // This is without the produce card.
   public nrOfCardsPerDraft = INITIAL_NR_OF_CARDS_PER_DRAFT
-  public money = 5
+  public money = 20
   public points = 0
   public science = 0
-  public moneyProduction = 1
+  public moneyProduction = 5
   public pointProduction = 0
   public productionCounter = 0
   public milestonesInGame: Milestone[] = []
