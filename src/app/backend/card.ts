@@ -64,5 +64,15 @@ export function allCardsWithoutProduce(): Card[] {
         gameState.pointProduction += 1
       }
     },
+    {
+      cardId: 4,
+      title: "Research",
+      description: "Gain 1 point per science, then gain 1 science",
+      cost: 5,
+      execute: (gameState: GameState) => {
+        gameState.points += gameState.science
+        gameState.science += 1
+      }
+    },
   ]
 }
