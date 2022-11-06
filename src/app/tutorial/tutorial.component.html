@@ -39,9 +39,10 @@
         {{ milestone.name }} ({{milestone.pointsReward}} points): {{ milestone.requirements }}.</li>
     </ul>
     <h2>Cards</h2>
-    <p>
-      TODO: fill this when the game is more finalized.
-    </p>
+    <ul>
+      <li *ngFor="let card of getAllCards()">
+        {{ card.title }} ({{card.cost}} money): {{ card.description }}.</li>
+    </ul>
 
     <a routerLink="/" class="w-100 btn btn-lg btn-primary">Back to main screen</a>
   </main>

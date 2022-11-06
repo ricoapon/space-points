@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {allMilestones, Milestone} from "../backend/milestone";
 import {INITIAL_MAX_NR_OF_TURNS} from "../backend/game-state";
+import {allCards, Card} from "../backend/card";
 
 @Component({
   selector: 'app-tutorial',
@@ -18,5 +19,9 @@ export class TutorialComponent implements OnInit {
 
   getAllMilestones(): Milestone[] {
     return allMilestones()
+  }
+
+  getAllCards(): Card[] {
+    return allCards()
   }
 }
