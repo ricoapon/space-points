@@ -23,9 +23,9 @@
 
     <h2>Turn</h2>
     <p>
-      Every turn you are given a choice of four cards. One of those cards is always "Trigger Production". This card is
-      free and increases your points and money by as much as you have point and money production. The other three cards
-      can have any kind of effect. See below for a full list of all the cards.
+      Every turn you are given a choice of {{ INITIAL_NR_OF_CARDS_PER_DRAFT + 1 }} cards. One of those cards is always
+      "Trigger Production". This card is free and increases your points and money by as much as you have point and money
+      production. The other three cards can have any kind of effect. See below for a full list of all the cards.
     </p>
     <h2>Milestones</h2>
     <p>
@@ -36,12 +36,14 @@
     </p>
     <ul>
       <li *ngFor="let milestone of getAllMilestones()">
-        {{ milestone.name }} ({{milestone.pointsReward}} points): {{ milestone.requirements }}.</li>
+        {{ milestone.name }} ({{milestone.pointsReward}} points): {{ milestone.requirements }}.
+      </li>
     </ul>
     <h2>Cards</h2>
     <ul>
       <li *ngFor="let card of getAllCards()">
-        {{ card.title }} ({{card.cost}} money): {{ card.description }}.</li>
+        {{ card.title }} ({{card.cost}} money): {{ card.description }}.
+      </li>
     </ul>
 
     <a routerLink="/" class="w-100 btn btn-lg btn-primary">Back to main screen</a>

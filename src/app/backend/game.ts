@@ -50,7 +50,9 @@ export class Game {
   }
 
   private determineNextCards(): Card[] {
-    const result = [cardProduce(), ...(this.randomizer.getRandomElementsFromArray(allCardsWithoutProduce(), 3))];
+    const result = [cardProduce(),
+      ...(this.randomizer.getRandomElementsFromArray(allCardsWithoutProduce(), this.gameState.nrOfCardsPerDraft))];
+
     // Ensure cards on the screen are in a consistent order. Not sure if this is needed, but seems nice.
     result.sort((c1, c2) => c1.cardId - c2.cardId)
     return result;

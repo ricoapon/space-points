@@ -77,10 +77,21 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: 5,
       title: "Deadline",
-      description: "Extend the game by 5 turns",
+      description: "Extend the game by 5 turns (limit is 30 turns)",
       cost: 40,
       execute: (gameState: GameState) => {
-        gameState.maxNrOfTurns += 5
+        if (gameState.maxNrOfTurns < 30) {
+          gameState.maxNrOfTurns += 5
+        }
+      }
+    },
+    {
+      cardId: 6,
+      title: "Magician",
+      description: "Show 1 more card every turn",
+      cost: 25,
+      execute: (gameState: GameState) => {
+        gameState.nrOfCardsPerDraft += 1
       }
     },
   ]

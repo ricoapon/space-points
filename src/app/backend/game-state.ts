@@ -1,10 +1,13 @@
 import {Milestone} from "./milestone";
 
 export const INITIAL_MAX_NR_OF_TURNS = 20
+export const INITIAL_NR_OF_CARDS_PER_DRAFT = 3;
 
 export class GameState {
   public turnCounter = 1
   public maxNrOfTurns = INITIAL_MAX_NR_OF_TURNS
+  // This is without the produce card.
+  public nrOfCardsPerDraft = INITIAL_NR_OF_CARDS_PER_DRAFT
   public money = 5
   public points = 0
   public science = 0
