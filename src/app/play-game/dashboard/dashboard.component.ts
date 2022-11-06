@@ -13,6 +13,8 @@ export class DashboardComponent implements OnInit {
   SCIENCE = IconType.SCIENCE
   POINT = IconType.POINT
   MONEY = IconType.MONEY
+  MONEY_PRODUCTION = IconType.MONEY_PRODUCTION
+  POINT_PRODUCTION = IconType.POINT_PRODUCTION
 
   constructor() { }
 

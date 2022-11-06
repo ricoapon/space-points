@@ -1,3 +1,7 @@
 svg {
   width: 25px;
 }
+
+.production {
+  background-color: #D2691E;
+}
