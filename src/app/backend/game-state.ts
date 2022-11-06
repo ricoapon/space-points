@@ -1,7 +1,10 @@
 import {Milestone} from "./milestone";
 
+export const INITIAL_MAX_NR_OF_TURNS = 20
+
 export class GameState {
   public turnCounter = 1
+  public maxNrOfTurns = INITIAL_MAX_NR_OF_TURNS
   public money = 5
   public points = 0
   public science = 0

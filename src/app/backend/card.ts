@@ -74,5 +74,14 @@ export function allCardsWithoutProduce(): Card[] {
         gameState.science += 1
       }
     },
+    {
+      cardId: 5,
+      title: "Deadline",
+      description: "Extend the game by 5 turns",
+      cost: 40,
+      execute: (gameState: GameState) => {
+        gameState.maxNrOfTurns += 5
+      }
+    },
   ]
 }

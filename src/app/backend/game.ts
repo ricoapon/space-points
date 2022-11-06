@@ -17,7 +17,6 @@ export type GameEvent = {
 
 @Injectable({providedIn: 'root'})
 export class Game {
-  private readonly MAX_NUMBER_OF_TURNS = 20
   private gameState: GameState;
   private randomizer: Randomizer;
 
@@ -37,7 +36,7 @@ export class Game {
     this.checkAchievedMilestones();
     this.gameState.turnCounter += 1;
 
-    if (this.MAX_NUMBER_OF_TURNS < this.gameState.turnCounter) {
+    if (this.gameState.maxNrOfTurns < this.gameState.turnCounter) {
       return {
         gameEventType: GameEventType.FINISHED_GAME,
         finalPoints: this.gameState.points,

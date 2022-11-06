@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {allMilestones, Milestone} from "../backend/milestone";
+import {INITIAL_MAX_NR_OF_TURNS} from "../backend/game-state";
 
 @Component({
   selector: 'app-tutorial',
@@ -7,6 +8,8 @@ import {allMilestones, Milestone} from "../backend/milestone";
   styleUrls: ['./tutorial.component.css']
 })
 export class TutorialComponent implements OnInit {
+  // Make it available in the HTML.
+  readonly INITIAL_MAX_NR_OF_TURNS = INITIAL_MAX_NR_OF_TURNS
 
   constructor() { }
 
