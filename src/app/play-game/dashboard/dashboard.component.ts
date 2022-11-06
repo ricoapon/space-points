@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {GameState} from "../../backend/game-state";
+import {IconType} from "../display-icon/display-icon.component";
 
 @Component({
   selector: 'app-dashboard',
@@ -8,6 +9,10 @@ import {GameState} from "../../backend/game-state";
 })
 export class DashboardComponent implements OnInit {
   @Input() gameState: GameState;
+
+  SCIENCE = IconType.SCIENCE
+  POINT = IconType.POINT
+  MONEY = IconType.MONEY
 
   constructor() { }
 

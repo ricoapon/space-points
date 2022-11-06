@@ -1,0 +1,15 @@
+.icon {
+  width: 25px;
+}
+
+.color-point {
+  color: var(--bs-green);
+}
+
+.color-science {
+  color: var(--bs-purple);
+}
+
+.color-money {
+  color: var(--bs-yellow);
+}

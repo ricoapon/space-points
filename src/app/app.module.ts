@@ -12,6 +12,7 @@ import {StartScreenComponent} from './start-screen/start-screen.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { TutorialComponent } from './tutorial/tutorial.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { DisplayIconComponent } from './play-game/display-icon/display-icon.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     MilestoneComponent,
     PlayGameComponent,
     StartScreenComponent,
-    TutorialComponent
+    TutorialComponent,
+    DisplayIconComponent
   ],
   imports: [
     BrowserModule,

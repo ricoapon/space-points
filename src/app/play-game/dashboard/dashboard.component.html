@@ -4,20 +4,19 @@
     <p>Produce counter {{ this.gameState.productionCounter }}</p>
   </div>
   <div class="col">
-    <h3>Resources</h3>
     <table>
       <tbody>
       <tr>
-        <td>Points</td>
-        <td>{{ this.gameState.points }}</td>
+        <td><app-display-icon [iconType]="POINT"></app-display-icon></td>
+        <td class="color-point">{{ this.gameState.points }}</td>
       </tr>
       <tr>
-        <td>Money</td>
-        <td>{{ this.gameState.money }}</td>
+        <td><app-display-icon [iconType]="MONEY"></app-display-icon></td>
+        <td class="color-money">{{ this.gameState.money }}</td>
       </tr>
       <tr>
-        <td>Science</td>
-        <td>{{ this.gameState.science }}</td>
+        <td><app-display-icon [iconType]="SCIENCE"></app-display-icon></td>
+        <td class="color-science">{{ this.gameState.science }}</td>
       </tr>
       </tbody>
     </table>
