@@ -13,3 +13,10 @@
 .color-money {
   color: var(--bs-yellow);
 }
+
+.single-item {
+  border: 1px solid var(--bs-primary);
+  border-radius: 5px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
