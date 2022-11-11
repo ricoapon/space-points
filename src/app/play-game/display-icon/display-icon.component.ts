@@ -6,6 +6,7 @@ export enum IconType {
   SCIENCE,
   MONEY_PRODUCTION,
   POINT_PRODUCTION,
+  HEART,
 }
 
 @Component({
@@ -51,6 +52,8 @@ export class DisplayIconComponent {
         return "green"
       case IconType.SCIENCE:
         return "purple"
+      case IconType.HEART:
+        return "red"
     }
   }
 }
