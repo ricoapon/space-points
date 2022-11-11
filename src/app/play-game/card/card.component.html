@@ -1,18 +1,20 @@
-<div class="s-card border border-primary"
+<div class="s-card"
      (click)="clickOnCard()"
      [@flipState]="flipState"
-     [class]="canBeBought ? 'can-be-bought border-primary' : 'can-not-be-bought border-danger'">
-  <div class="s-card-cost-container">
-    <span>
-      {{ card.cost }}
-    </span>
-  </div>
+     [class]="canBeBought ? 'can-be-bought' : 'can-not-be-bought'">
+  <div class="s-card-container">
+    <div class="s-card-cost-container">
+      <span>
+        {{ card.cost }}
+      </span>
+    </div>
 
-  <div class="s-card-title">
-    <h3>{{ card.title }}</h3>
-  </div>
+    <div class="s-card-title">
+      <h3>{{ card.title }}</h3>
+    </div>
 
-  <div class="s-card-description">
-    {{ card.description }}
+    <div class="s-card-description">
+      {{ card.description }}
+    </div>
   </div>
 </div>
