@@ -40,7 +40,7 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: 2,
       title: "Remote bomb",
-      description: "Destroy 5 enemy flag ships",
+      description: "Destroy 5 enemy flagships",
       cost: 20,
       execute: (gameState: GameState) => {
         gameState.points += 5

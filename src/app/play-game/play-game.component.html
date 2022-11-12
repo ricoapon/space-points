@@ -5,7 +5,8 @@
     </div>
 
     <div class="row mb-4">
-      <app-card-container [shownCards]="shownCards" [gameState]="this.game.getGameState()" (selectCard)="pickCard($event)"></app-card-container>
+      <app-card-container [shownCards]="shownCards" [gameState]="this.game.getGameState()"
+                          (selectCard)="pickCard($event)"></app-card-container>
     </div>
 
     <div class="row">
@@ -13,7 +14,8 @@
     </div>
   </div>
   <div *ngIf="finishedGame" class="container text-center bg-black">
-    <h1>Congratulations! You finished the game with <span class="color-points">{{ this.finalPoints }}</span> points.</h1>
+    <h1>Congratulations! You finished the game and killed
+      <span class="color-points">{{ this.finalPoints }}</span> flagships.</h1>
     <a routerLink="/" class="btn btn-lg btn-light">Back to menu</a>
   </div>
 </div>
