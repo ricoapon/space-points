@@ -9,7 +9,6 @@ export class GameState {
   public nrOfCardsPerDraft = INITIAL_NR_OF_CARDS_PER_DRAFT
   public money = 20
   public points = 0
-  public science = 0
   public weapons = 5
   public bigLasers = 0
   public weaponsFiredCounter = 0

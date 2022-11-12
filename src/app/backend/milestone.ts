@@ -49,14 +49,5 @@ export function allMilestones(): Milestone[] {
       maxProgression: 60,
       icon: IconType.MONEY,
     },
-    {
-      milestoneId: 4,
-      name: "PHD",
-      requirements: "Have 5 science",
-      pointsReward: 10,
-      progression: (gameState: GameState) => gameState.science,
-      maxProgression: 5,
-      icon: IconType.SCIENCE,
-    },
   ]
 }

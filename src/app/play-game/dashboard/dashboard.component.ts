@@ -11,7 +11,6 @@ import {DOCUMENT} from "@angular/common";
 export class DashboardComponent implements OnInit {
   @Input() gameState: GameState;
 
-  SCIENCE = IconType.SCIENCE
   POINT = IconType.POINT
   FIRE_WEAPONS = IconType.FIRE_WEAPONS
   HEART = IconType.HEART

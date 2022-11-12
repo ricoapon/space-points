@@ -3,7 +3,6 @@ import {Component, Input} from '@angular/core';
 export enum IconType {
   MONEY,
   POINT,
-  SCIENCE,
   WEAPONS,
   BIG_LASERS,
   HEART,

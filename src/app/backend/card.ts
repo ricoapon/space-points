@@ -58,11 +58,16 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: 4,
       title: "Weapon Research",
-      description: "Destroy 1 flag ship per science, then gain 1 science",
+      description: "Convert 3 small lasers into big lasers",
       cost: 5,
       execute: (gameState: GameState) => {
-        gameState.points += gameState.science
-        gameState.science += 1
+        if (gameState.weapons >= 3) {
+          gameState.weapons -= 3
+          gameState.bigLasers += 3
+        } else {
+          gameState.bigLasers += gameState.weapons
+          gameState.weapons = 0
+        }
       }
     },
     {
