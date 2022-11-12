@@ -3,6 +3,7 @@ import {Game, GameEventType} from "../backend/game";
 import {Card} from "../backend/card";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {TutorialContainerComponent} from "./tutorial-container/tutorial-container.component";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-play-game',
@@ -15,13 +16,15 @@ export class PlayGameComponent implements OnInit {
   finishedGame: boolean = false;
   finalPoints: number;
 
-  constructor(game: Game, private modalService: NgbModal) {
+  constructor(game: Game, private modalService: NgbModal, private cookieService: CookieService) {
     this.game = game;
     this.shownCards = this.game.start();
   }
 
   ngOnInit(): void {
-    this.startupTutorial()
+    if (this.cookieService.get('finished_tutorial') != 'true') {
+      this.startupTutorial()
+    }
   }
 
   pickCard(cardId: number) {
@@ -42,8 +45,9 @@ export class PlayGameComponent implements OnInit {
       centered: true, backdrop: 'static',
       keyboard: false
     }).result.then(
-      (result) => {
-        // TODO: remember that we don't need to open tutorial anymore.
+      () => {
+        // It doesn't matter how the user closed the tutorial: don't show it again.
+        this.cookieService.set('finished_tutorial', 'true')
       },
     );
   }

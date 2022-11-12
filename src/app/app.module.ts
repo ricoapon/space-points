@@ -15,6 +15,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {DisplayIconComponent} from './play-game/display-icon/display-icon.component';
 import {TutorialContainerComponent} from './play-game/tutorial-container/tutorial-container.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {CookieService} from "ngx-cookie-service";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
