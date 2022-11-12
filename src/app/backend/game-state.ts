@@ -9,9 +9,9 @@ export class GameState {
   public nrOfCardsPerDraft = INITIAL_NR_OF_CARDS_PER_DRAFT
   public money = 20
   public points = 0
-  public weapons = 5
+  public smallLasers = 5
   public bigLasers = 0
-  public weaponsFiredCounter = 0
+  public lasersFiredCounter = 0
   public milestonesInGame: Milestone[] = []
   public achievedMilestoneIds: number[] = []
   public deadlineCounter = 0

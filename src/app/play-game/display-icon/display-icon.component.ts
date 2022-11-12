@@ -3,10 +3,10 @@ import {Component, Input} from '@angular/core';
 export enum IconType {
   MONEY,
   POINT,
-  WEAPONS,
+  SMALL_LASERS,
   BIG_LASERS,
   HEART,
-  FIRE_WEAPONS,
+  FIRE_LASERS,
   MENU,
 }
 

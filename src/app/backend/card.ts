@@ -9,19 +9,19 @@ export type Card = {
 }
 
 export function allCards(): Card[] {
-  return [cardFireWeapons(), ...allCardsWithoutProduce()]
+  return [cardFireLasers(), ...allCardsWithoutProduce()]
 }
 
-export function cardFireWeapons(): Card {
+export function cardFireLasers(): Card {
   return {
     cardId: -1,
     title: "Fire lasers",
     description: "Shoot down enemy ships for resources",
     cost: 0,
     execute: (gameState: GameState) => {
-      gameState.money += gameState.weapons
+      gameState.money += gameState.smallLasers
       gameState.points += gameState.bigLasers
-      gameState.weaponsFiredCounter += 1
+      gameState.lasersFiredCounter += 1
     }
   }
 }
@@ -31,10 +31,10 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: 1,
       title: "Business Contract",
-      description: "Get 5 weapons",
+      description: "Get 5 small lasers",
       cost: 10,
       execute: (gameState: GameState) => {
-        gameState.weapons += 5
+        gameState.smallLasers += 5
       }
     },
     {
@@ -61,12 +61,12 @@ export function allCardsWithoutProduce(): Card[] {
       description: "Convert 3 small lasers into big lasers",
       cost: 5,
       execute: (gameState: GameState) => {
-        if (gameState.weapons >= 3) {
-          gameState.weapons -= 3
+        if (gameState.smallLasers >= 3) {
+          gameState.smallLasers -= 3
           gameState.bigLasers += 3
         } else {
-          gameState.bigLasers += gameState.weapons
-          gameState.weapons = 0
+          gameState.bigLasers += gameState.smallLasers
+          gameState.smallLasers = 0
         }
       }
     },

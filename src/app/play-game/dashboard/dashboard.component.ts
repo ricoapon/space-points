@@ -12,10 +12,10 @@ export class DashboardComponent implements OnInit {
   @Input() gameState: GameState;
 
   POINT = IconType.POINT
-  FIRE_WEAPONS = IconType.FIRE_WEAPONS
+  FIRE_LASERS = IconType.FIRE_LASERS
   HEART = IconType.HEART
   MONEY = IconType.MONEY
-  WEAPONS = IconType.WEAPONS
+  SMALL_LASERS = IconType.SMALL_LASERS
   BIG_LASERS = IconType.BIG_LASERS
   MENU = IconType.MENU
 

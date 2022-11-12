@@ -16,11 +16,11 @@ export function allMilestones(): Milestone[] {
     {
       milestoneId: 0,
       name: "Weapon Collector",
-      requirements: "Have 30 weapons",
+      requirements: "Have 30 small lasers",
       pointsReward: 10,
-      progression: (gameState: GameState) => gameState.weapons,
+      progression: (gameState: GameState) => gameState.smallLasers,
       maxProgression: 30,
-      icon: IconType.WEAPONS,
+      icon: IconType.SMALL_LASERS,
     },
     {
       milestoneId: 1,
@@ -36,9 +36,9 @@ export function allMilestones(): Milestone[] {
       name: "Fire all the lasers",
       requirements: "Fire lasers 10 times",
       pointsReward: 10,
-      progression: (gameState: GameState) => gameState.weaponsFiredCounter,
+      progression: (gameState: GameState) => gameState.lasersFiredCounter,
       maxProgression: 10,
-      icon: IconType.FIRE_WEAPONS,
+      icon: IconType.FIRE_LASERS,
     },
     {
       milestoneId: 3,
