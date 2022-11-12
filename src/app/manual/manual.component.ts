@@ -4,7 +4,7 @@ import {INITIAL_MAX_HEALTH, INITIAL_NR_OF_CARDS_PER_DRAFT} from "../backend/game
 import {allCards, Card} from "../backend/card";
 
 @Component({
-  selector: 'app-tutorial',
+  selector: 'app-manual',
   templateUrl: './manual.component.html',
   styleUrls: ['./manual.component.css']
 })
