@@ -21,13 +21,25 @@ export class CardComponent implements OnInit {
   @Input() disableCard: boolean;
   @Output() selectCard: EventEmitter<number> = new EventEmitter<number>()
   @Output() disableOtherCards: EventEmitter<boolean> = new EventEmitter<boolean>()
+  classes: String[] = []
   flipState = "inactive"
 
   ngOnInit(): void {
+    if (this.canBeBought) {
+      this.classes.push("can-be-bought")
+    } else {
+      this.classes.push("can-not-be-bought")
+    }
   }
 
   clickOnCard() {
-    if (this.disableCard || !this.canBeBought) {
+    if (this.disableCard) {
+      return
+    }
+
+    if (!this.canBeBought) {
+      this.classes.push("shake")
+      setTimeout(() => delete this.classes[this.classes.indexOf("shake")], 500);
       return
     }
 

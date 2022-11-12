@@ -1,7 +1,7 @@
 <div class="s-card"
      (click)="clickOnCard()"
      [@flipState]="flipState"
-     [class]="canBeBought ? 'can-be-bought' : 'can-not-be-bought'">
+     [class]="classes.join(' ')">
   <div class="s-card-container">
     <div class="s-card-cost-container">
       <span>
