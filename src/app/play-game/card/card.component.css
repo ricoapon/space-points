@@ -1,7 +1,7 @@
 .s-card {
   background: white;
   padding: 5px;
-  height: 200px;
+  height: 165px;
   width: 156px;
   border-radius: 5px;
 }
@@ -21,7 +21,7 @@
 }
 
 .shake {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
@@ -46,11 +46,13 @@
 }
 
 .can-be-bought:hover {
-  box-shadow: 5px 5px 30px 7px rgba(var(--bs-primary-rgb),0.1), -5px -5px 30px 7px rgba(var(--bs-primary-rgb),0.1) !important;
+  box-shadow: 5px 5px 30px 7px rgba(var(--bs-primary-rgb), 0.1), -5px -5px 30px 7px rgba(var(--bs-primary-rgb), 0.1) !important;
 }
 
 .s-card-cost-container {
-  width: 100%;
+  position: relative;
+  top: -5px;
+  left: -5px;
 }
 
 .s-card-cost-container > span {
@@ -62,6 +64,11 @@
   display: inline-block;
   text-align: center;
   margin-right: 6px;
+}
+
+.s-card-title {
+  position: relative;
+  top: -10px;
 }
 
 .s-card-image-container {
