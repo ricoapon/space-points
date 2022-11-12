@@ -1,52 +1,12 @@
-.s-card {
-  /* Transparent background color. */
-  background-color: rgba(0, 0, 0, 0);
-  padding: 5px;
-  height: 200px;
-  width: 156px;
+.single-item {
+  border: 2px solid white;
   border-radius: 5px;
 }
 
-.can-not-be-bought:hover {
-  background-color: var(--bs-danger);
-}
-.can-be-bought:hover {
-  background-color: var(--bs-primary);
+.achieved {
+  color: #0F8B8D;
 }
 
-.s-card-cost-container {
-  width: 100%;
+.not-achieved {
+  color: #A8201A;
 }
-
-.s-card-cost-container > span {
-  color: black;
-  background: var(--bs-success);
-  border-radius: 50%;
-  height: 26px;
-  width: 26px;
-  line-height: 26px;
-  display: inline-block;
-  text-align: center;
-  margin-right: 6px;
-}
-
-.s-card-image-container {
-  width: 100%;
-  height: auto;
-  display: flex;
-}
-
-.s-card-image-container > img {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.s-card-title {
-  text-align: center;
-}
-
-.s-card-description {
-  text-align: center;
-}
-

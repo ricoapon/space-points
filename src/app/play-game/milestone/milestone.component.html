@@ -1,17 +1,6 @@
-<div class="s-card border"
-     [class]="achieved ? 'border-success' : 'border-danger'">
-  <div class="s-card-cost-container">
-    <span>
-      {{ milestone.pointsReward }}
-    </span>
-  </div>
-
-  <div class="s-card-title">
-    <h3>{{ milestone.name }}</h3>
-    {{ milestone.requirements }}
-  </div>
-
-  <div class="s-card-description">
+<div class="single-item">
+  <h1 [class]="achieved ? 'achieved' : 'not-achieved'">
+    <app-display-icon [iconType]="milestone.icon"></app-display-icon>
     {{ milestone.progression(this.gameState) }} / {{ milestone.maxProgression }}
-  </div>
+  </h1>
 </div>

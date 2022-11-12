@@ -1,4 +1,5 @@
 import {GameState} from "./game-state";
+import {IconType} from "../play-game/display-icon/display-icon.component";
 
 export type Milestone = {
   milestoneId: number,
@@ -7,6 +8,7 @@ export type Milestone = {
   pointsReward: number,
   progression: (gameState: GameState) => number,
   maxProgression: number,
+  icon: IconType,
 }
 
 export function allMilestones(): Milestone[] {
@@ -18,6 +20,7 @@ export function allMilestones(): Milestone[] {
       pointsReward: 10,
       progression: (gameState: GameState) => gameState.weapons,
       maxProgression: 20,
+      icon: IconType.WEAPONS,
     },
     {
       milestoneId: 1,
@@ -26,6 +29,7 @@ export function allMilestones(): Milestone[] {
       pointsReward: 10,
       progression: (gameState: GameState) => gameState.bigLasers,
       maxProgression: 5,
+      icon: IconType.BIG_LASERS,
     },
     {
       milestoneId: 2,
@@ -34,6 +38,7 @@ export function allMilestones(): Milestone[] {
       pointsReward: 10,
       progression: (gameState: GameState) => gameState.weaponsFiredCounter,
       maxProgression: 10,
+      icon: IconType.FIRE_WEAPONS,
     },
     {
       milestoneId: 3,
@@ -42,6 +47,7 @@ export function allMilestones(): Milestone[] {
       pointsReward: 10,
       progression: (gameState: GameState) => gameState.money,
       maxProgression: 60,
+      icon: IconType.MONEY,
     },
     {
       milestoneId: 4,
@@ -50,6 +56,7 @@ export function allMilestones(): Milestone[] {
       pointsReward: 10,
       progression: (gameState: GameState) => gameState.science,
       maxProgression: 5,
+      icon: IconType.SCIENCE,
     },
   ]
 }

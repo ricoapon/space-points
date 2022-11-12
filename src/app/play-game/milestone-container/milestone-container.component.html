@@ -1,5 +1,5 @@
-<div class="row justify-content-center border border-primary mb-1">
-  <div class="col-auto mt-2 mb-2" *ngFor="let milestone of gameState.milestonesInGame">
+<div class="row justify-content-center mb-1">
+  <div class="col-auto" *ngFor="let milestone of gameState.milestonesInGame">
     <app-milestone [milestone]="milestone" [achieved]="achievedMilestone(milestone)" [gameState]="gameState"></app-milestone>
   </div>
 </div>
