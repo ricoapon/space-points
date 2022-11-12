@@ -13,6 +13,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { ManualComponent } from './manual/manual.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { DisplayIconComponent } from './play-game/display-icon/display-icon.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DisplayIconComponent } from './play-game/display-icon/display-icon.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

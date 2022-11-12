@@ -2,6 +2,8 @@ import {Component, Inject, Input, OnInit} from '@angular/core';
 import {GameState} from "../../backend/game-state";
 import {IconType} from "../display-icon/display-icon.component";
 import {DOCUMENT} from "@angular/common";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +24,8 @@ export class DashboardComponent implements OnInit {
   elem: any;
   isFullScreen = false;
 
-  constructor(@Inject(DOCUMENT) private document: any) {}
+  constructor(@Inject(DOCUMENT) private document: any, private modalService: NgbModal, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.elem = document.documentElement;
@@ -68,4 +71,16 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  BACK_TO_MENU = "back-to-menu"
+
+  open(content: any) {
+    this.modalService.open(content, {centered: true}).result.then(
+      (result) => {
+        if (result === this.BACK_TO_MENU) {
+          // noinspection JSIgnoredPromiseFromCall
+          this.router.navigate(["/"])
+        }
+      },
+    );
+  }
 }

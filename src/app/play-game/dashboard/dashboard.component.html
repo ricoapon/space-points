@@ -31,13 +31,12 @@
       {{ this.gameState.smallLasers }}</h1>
   </div>
   <div class="col-auto d-flex align-items-center">
-    <app-display-icon [iconType]="MENU" data-bs-toggle="modal" data-bs-target="#menu"></app-display-icon>
+    <app-display-icon [iconType]="MENU" (click)="open(content)"></app-display-icon>
   </div>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+<ng-template #content let-modal>
     <div class="modal-content">
 
       <main class="main w-100 m-auto">
@@ -45,12 +44,9 @@
 
         <button class="w-100 btn btn-lg text-white" (click)="toggleFullScreen()">Toggle fullscreen</button>
 
-        <a class="w-100 btn btn-lg text-white" routerLink="/" data-bs-dismiss="modal">Back to menu</a>
+        <a class="w-100 btn btn-lg text-white" (click)="modal.close(BACK_TO_MENU)">Back to menu</a>
 
-        <button type="button" class="w-100 btn btn-lg text-white" data-bs-dismiss="modal" aria-label="Close">
-          Close menu
-        </button>
+        <a class="w-100 btn btn-lg text-white" (click)="modal.close()">Close menu</a>
       </main>
     </div>
-  </div>
-</div>
+</ng-template>
