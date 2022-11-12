@@ -4,5 +4,13 @@
 
   display: flex;
   align-items: center;
+}
 
+.my-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.color-points {
+  color: #0F8B8D;
 }
