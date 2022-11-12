@@ -16,10 +16,10 @@ export function allMilestones(): Milestone[] {
     {
       milestoneId: 0,
       name: "Weapon Collector",
-      requirements: "Have 20 weapons",
+      requirements: "Have 30 weapons",
       pointsReward: 10,
       progression: (gameState: GameState) => gameState.weapons,
-      maxProgression: 20,
+      maxProgression: 30,
       icon: IconType.WEAPONS,
     },
     {

@@ -81,7 +81,7 @@ export function allCardsWithoutProduce(): Card[] {
       cardId: 6,
       title: "Radar",
       description: "Show 1 more card every turn",
-      cost: 25,
+      cost: 15,
       execute: (gameState: GameState) => {
         gameState.nrOfCardsPerDraft += 1
       }
