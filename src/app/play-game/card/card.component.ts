@@ -39,7 +39,7 @@ export class CardComponent implements OnInit {
 
     if (!this.canBeBought) {
       this.classes.push("shake")
-      setTimeout(() => delete this.classes[this.classes.indexOf("shake")], 500);
+      setTimeout(() => delete this.classes[this.classes.indexOf("shake")], 820);
       return
     }
 
