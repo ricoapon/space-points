@@ -5,10 +5,10 @@ import {allCards, Card} from "../backend/card";
 
 @Component({
   selector: 'app-tutorial',
-  templateUrl: './tutorial.component.html',
-  styleUrls: ['./tutorial.component.css']
+  templateUrl: './manual.component.html',
+  styleUrls: ['./manual.component.css']
 })
-export class TutorialComponent implements OnInit {
+export class ManualComponent implements OnInit {
   // Make it available in the HTML.
   readonly INITIAL_MAX_HEALTH = INITIAL_MAX_HEALTH
   readonly INITIAL_NR_OF_CARDS_PER_DRAFT = INITIAL_NR_OF_CARDS_PER_DRAFT

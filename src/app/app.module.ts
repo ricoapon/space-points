@@ -10,7 +10,7 @@ import {MilestoneComponent} from './play-game/milestone/milestone.component';
 import {PlayGameComponent} from './play-game/play-game.component';
 import {StartScreenComponent} from './start-screen/start-screen.component';
 import {AppRoutingModule} from "./app-routing.module";
-import { TutorialComponent } from './tutorial/tutorial.component';
+import { ManualComponent } from './manual/manual.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { DisplayIconComponent } from './play-game/display-icon/display-icon.component';
 
@@ -24,7 +24,7 @@ import { DisplayIconComponent } from './play-game/display-icon/display-icon.comp
     MilestoneComponent,
     PlayGameComponent,
     StartScreenComponent,
-    TutorialComponent,
+    ManualComponent,
     DisplayIconComponent
   ],
   imports: [
