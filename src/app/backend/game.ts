@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {GameState} from "./game-state";
-import {allCards, allCardsWithoutProduce, Card, cardProduce} from "./card";
+import {allCards, allCardsWithoutProduce, Card, cardFireWeapons} from "./card";
 import {allMilestones} from "./milestone";
 import {Randomizer} from "./randomizer";
 
@@ -50,7 +50,7 @@ export class Game {
   }
 
   private determineNextCards(): Card[] {
-    const result = [cardProduce(),
+    const result = [cardFireWeapons(),
       ...(this.randomizer.getRandomElementsFromArray(allCardsWithoutProduce(), this.gameState.nrOfCardsPerDraft))];
 
     // Ensure cards on the screen are in a consistent order. Not sure if this is needed, but seems nice.

@@ -9,19 +9,19 @@ export type Card = {
 }
 
 export function allCards(): Card[] {
-  return [cardProduce(), ...allCardsWithoutProduce()]
+  return [cardFireWeapons(), ...allCardsWithoutProduce()]
 }
 
-export function cardProduce(): Card {
+export function cardFireWeapons(): Card {
   return {
     cardId: -1,
-    title: "Production",
-    description: "Trigger production",
+    title: "Fire lasers",
+    description: "Shoot down enemy ships for resources",
     cost: 0,
     execute: (gameState: GameState) => {
-      gameState.money += gameState.moneyProduction
-      gameState.points += gameState.pointProduction
-      gameState.productionCounter += 1
+      gameState.money += gameState.weapons
+      gameState.points += gameState.bigLasers
+      gameState.weaponsFiredCounter += 1
     }
   }
 }
@@ -30,17 +30,17 @@ export function allCardsWithoutProduce(): Card[] {
   return [
     {
       cardId: 1,
-      title: "Money Production",
-      description: "Get 5 money production",
+      title: "Business Contract",
+      description: "Get 5 weapons",
       cost: 10,
       execute: (gameState: GameState) => {
-        gameState.moneyProduction += 5
+        gameState.weapons += 5
       }
     },
     {
       cardId: 2,
-      title: "Points",
-      description: "Get 5 points",
+      title: "Remote bomb",
+      description: "Destroy 5 enemy flag ships",
       cost: 20,
       execute: (gameState: GameState) => {
         gameState.points += 5
@@ -48,17 +48,17 @@ export function allCardsWithoutProduce(): Card[] {
     },
     {
       cardId: 3,
-      title: "Point production",
-      description: "Get 1 point production",
+      title: "Install big laser",
+      description: "Get 1 big laser",
       cost: 10,
       execute: (gameState: GameState) => {
-        gameState.pointProduction += 1
+        gameState.bigLasers += 1
       }
     },
     {
       cardId: 4,
-      title: "Research",
-      description: "Gain 1 point per science, then gain 1 science",
+      title: "Weapon Research",
+      description: "Destroy 1 flag ship per science, then gain 1 science",
       cost: 5,
       execute: (gameState: GameState) => {
         gameState.points += gameState.science
@@ -67,7 +67,7 @@ export function allCardsWithoutProduce(): Card[] {
     },
     {
       cardId: 5,
-      title: "Deadline",
+      title: "Space Haven",
       description: "Heal by 5 HP (can only be used twice)",
       cost: 40,
       execute: (gameState: GameState) => {
@@ -79,7 +79,7 @@ export function allCardsWithoutProduce(): Card[] {
     },
     {
       cardId: 6,
-      title: "Magician",
+      title: "Radar",
       description: "Show 1 more card every turn",
       cost: 25,
       execute: (gameState: GameState) => {

@@ -4,9 +4,10 @@ export enum IconType {
   MONEY,
   POINT,
   SCIENCE,
-  MONEY_PRODUCTION,
-  POINT_PRODUCTION,
+  WEAPONS,
+  BIG_LASERS,
   HEART,
+  FIRE_WEAPONS,
 }
 
 @Component({
@@ -18,19 +19,8 @@ export class DisplayIconComponent {
   @Input() iconType: IconType;
   @Input() color: String;
 
-  getIsProduction(): boolean {
-    return IconType[this.iconType].indexOf("PRODUCTION") > 0
-  }
-
   getPathToIcon() {
-    let name: String;
-    if (this.iconType == IconType.MONEY_PRODUCTION) {
-      name = IconType[IconType.MONEY].toLowerCase()
-    } else if (this.iconType == IconType.POINT_PRODUCTION) {
-      name = IconType[IconType.POINT].toLowerCase()
-    } else {
-      name = IconType[this.iconType].toLowerCase()
-    }
+    let name: String = IconType[this.iconType].toLowerCase()
     return "/assets/icons/" + name + ".svg#icon"
   }
 

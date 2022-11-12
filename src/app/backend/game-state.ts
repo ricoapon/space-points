@@ -10,9 +10,9 @@ export class GameState {
   public money = 20
   public points = 0
   public science = 0
-  public moneyProduction = 5
-  public pointProduction = 0
-  public productionCounter = 0
+  public weapons = 5
+  public bigLasers = 0
+  public weaponsFiredCounter = 0
   public milestonesInGame: Milestone[] = []
   public achievedMilestoneIds: number[] = []
   public deadlineCounter = 0
