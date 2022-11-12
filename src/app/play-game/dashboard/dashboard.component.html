@@ -1,25 +1,25 @@
 <div class="row justify-content-center mt-1">
   <div class="col-auto single-item">
-    <h1><app-display-icon [iconType]="HEART"></app-display-icon> {{ this.gameState.turnCounter }}</h1>
+    <h3><app-display-icon [iconType]="HEART"></app-display-icon> {{ this.gameState.turnCounter }}</h3>
   </div>
   <div class="col-auto single-item">
-    <h1>P {{ this.gameState.productionCounter }}</h1>
+    <h3>P {{ this.gameState.productionCounter }}</h3>
   </div>
   <div class="col-auto single-item">
-    <h1><app-display-icon [iconType]="POINT"></app-display-icon>{{ this.gameState.points }}</h1>
+    <h3><app-display-icon [iconType]="POINT"></app-display-icon>{{ this.gameState.points }}</h3>
   </div>
   <div class="col-auto single-item">
-    <h1><app-display-icon [iconType]="POINT_PRODUCTION"></app-display-icon>{{ this.gameState.pointProduction }}</h1>
+    <h3><app-display-icon [iconType]="POINT_PRODUCTION"></app-display-icon>{{ this.gameState.pointProduction }}</h3>
   </div>
   <div class="col-auto single-item">
-    <h1><app-display-icon [iconType]="MONEY"></app-display-icon>{{ this.gameState.money }}</h1>
+    <h3><app-display-icon [iconType]="MONEY"></app-display-icon>{{ this.gameState.money }}</h3>
   </div>
 
   <div class="col-auto single-item">
-    <h1><app-display-icon [iconType]="MONEY_PRODUCTION"></app-display-icon>{{ this.gameState.moneyProduction }}</h1>
+    <h3><app-display-icon [iconType]="MONEY_PRODUCTION"></app-display-icon>{{ this.gameState.moneyProduction }}</h3>
   </div>
   <div class="col-auto single-item">
-    <h1><app-display-icon [iconType]="SCIENCE"></app-display-icon>{{ this.gameState.science }}</h1>
+    <h3><app-display-icon [iconType]="SCIENCE"></app-display-icon>{{ this.gameState.science }}</h3>
   </div>
   <div class="col-auto d-flex align-items-center">
     <a routerLink="/" class="btn btn-lg btn-danger">Quit</a>

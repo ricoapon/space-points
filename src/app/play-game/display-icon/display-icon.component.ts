@@ -39,21 +39,6 @@ export class DisplayIconComponent {
   }
 
   private determineColor(): String {
-    if (this.color != undefined && this.color.length > 0) {
-      return this.color
-    }
-
-    switch (this.iconType) {
-      case IconType.MONEY:
-      case IconType.MONEY_PRODUCTION:
-        return "yellow"
-      case IconType.POINT:
-      case IconType.POINT_PRODUCTION:
-        return "green"
-      case IconType.SCIENCE:
-        return "purple"
-      case IconType.HEART:
-        return "red"
-    }
+    return "white"
   }
 }
