@@ -17,3 +17,10 @@
   margin-right: 5px;
   margin-bottom: 5px;
 }
+
+.modal-content {
+  background-color: black;
+  border: 2px solid white;
+}
+
+

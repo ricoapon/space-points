@@ -8,6 +8,7 @@ export enum IconType {
   BIG_LASERS,
   HEART,
   FIRE_WEAPONS,
+  MENU,
 }
 
 @Component({

@@ -1,27 +1,61 @@
 <div class="row justify-content-center mt-1">
   <div class="col-auto single-item">
-    <h1><app-display-icon [iconType]="HEART"></app-display-icon> {{ this.gameState.health }}</h1>
+    <h1>
+      <app-display-icon [iconType]="HEART"></app-display-icon>
+      {{ this.gameState.health }}</h1>
   </div>
   <div class="col-auto single-item">
-    <h1><app-display-icon [iconType]="FIRE_WEAPONS"></app-display-icon> {{ this.gameState.weaponsFiredCounter }}</h1>
+    <h1>
+      <app-display-icon [iconType]="FIRE_WEAPONS"></app-display-icon>
+      {{ this.gameState.weaponsFiredCounter }}</h1>
   </div>
   <div class="col-auto single-item">
-    <h1><app-display-icon [iconType]="POINT"></app-display-icon>{{ this.gameState.points }}</h1>
+    <h1>
+      <app-display-icon [iconType]="POINT"></app-display-icon>
+      {{ this.gameState.points }}</h1>
   </div>
   <div class="col-auto single-item">
-    <h1><app-display-icon [iconType]="BIG_LASERS"></app-display-icon>{{ this.gameState.bigLasers }}</h1>
+    <h1>
+      <app-display-icon [iconType]="BIG_LASERS"></app-display-icon>
+      {{ this.gameState.bigLasers }}</h1>
   </div>
   <div class="col-auto single-item">
-    <h1><app-display-icon [iconType]="MONEY"></app-display-icon>{{ this.gameState.money }}</h1>
+    <h1>
+      <app-display-icon [iconType]="MONEY"></app-display-icon>
+      {{ this.gameState.money }}</h1>
   </div>
 
   <div class="col-auto single-item">
-    <h1><app-display-icon [iconType]="WEAPONS"></app-display-icon>{{ this.gameState.weapons }}</h1>
+    <h1>
+      <app-display-icon [iconType]="WEAPONS"></app-display-icon>
+      {{ this.gameState.weapons }}</h1>
   </div>
   <div class="col-auto single-item">
-    <h1><app-display-icon [iconType]="SCIENCE"></app-display-icon>{{ this.gameState.science }}</h1>
+    <h1>
+      <app-display-icon [iconType]="SCIENCE"></app-display-icon>
+      {{ this.gameState.science }}</h1>
   </div>
   <div class="col-auto d-flex align-items-center">
-    <a routerLink="/" class="btn btn-lg btn-danger">Quit</a>
+    <app-display-icon [iconType]="MENU" data-bs-toggle="modal" data-bs-target="#menu"></app-display-icon>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <main class="main w-100 m-auto">
+        <h1 class="border-bottom border-white text-center">Menu</h1>
+
+        <button class="w-100 btn btn-lg text-white" (click)="toggleFullScreen()">Toggle fullscreen</button>
+
+        <a class="w-100 btn btn-lg text-white" routerLink="/" data-bs-dismiss="modal">Back to menu</a>
+
+        <button type="button" class="w-100 btn btn-lg text-white" data-bs-dismiss="modal" aria-label="Close">
+          Close menu
+        </button>
+      </main>
+    </div>
   </div>
 </div>

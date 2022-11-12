@@ -13,7 +13,6 @@ export class AppComponent {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.activeClass = event.url.split('/')[1] || 'default';
-        console.log(this.activeClass);
       }
     });
   }
