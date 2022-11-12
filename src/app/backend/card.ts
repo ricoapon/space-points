@@ -68,11 +68,12 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: 5,
       title: "Deadline",
-      description: "Extend the game by 5 turns (limit is 30 turns)",
+      description: "Heal by 5 HP (can only be used twice)",
       cost: 40,
       execute: (gameState: GameState) => {
-        if (gameState.maxNrOfTurns < 30) {
-          gameState.maxNrOfTurns += 5
+        gameState.deadlineCounter += 1
+        if (gameState.deadlineCounter <= 2) {
+          gameState.health += 5
         }
       }
     },

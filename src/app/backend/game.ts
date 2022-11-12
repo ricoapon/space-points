@@ -34,9 +34,9 @@ export class Game {
   public pickCard(cardId: number): GameEvent {
     this.playCard(cardId);
     this.checkAchievedMilestones();
-    this.gameState.turnCounter += 1;
+    this.gameState.health -= 1;
 
-    if (this.gameState.maxNrOfTurns < this.gameState.turnCounter) {
+    if (this.gameState.health < 1) {
       return {
         gameEventType: GameEventType.FINISHED_GAME,
         finalPoints: this.gameState.points,
