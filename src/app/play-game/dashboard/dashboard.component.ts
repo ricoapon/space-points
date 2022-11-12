@@ -4,6 +4,7 @@ import {IconType} from "../display-icon/display-icon.component";
 import {DOCUMENT} from "@angular/common";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {Router} from "@angular/router";
+import {TutorialContainerComponent} from "../tutorial-container/tutorial-container.component";
 
 @Component({
   selector: 'app-dashboard',
@@ -72,6 +73,7 @@ export class DashboardComponent implements OnInit {
   }
 
   BACK_TO_MENU = "back-to-menu"
+  START_TUTORIAL = "start-tutorial"
 
   open(content: any) {
     this.modalService.open(content, {centered: true}).result.then(
@@ -79,8 +81,14 @@ export class DashboardComponent implements OnInit {
         if (result === this.BACK_TO_MENU) {
           // noinspection JSIgnoredPromiseFromCall
           this.router.navigate(["/"])
+        } else if (result === this.START_TUTORIAL) {
+          this.startTutorial()
         }
       },
     );
+  }
+
+  startTutorial() {
+    this.modalService.open(TutorialContainerComponent, {centered: true})
   }
 }

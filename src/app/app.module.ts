@@ -10,10 +10,11 @@ import {MilestoneComponent} from './play-game/milestone/milestone.component';
 import {PlayGameComponent} from './play-game/play-game.component';
 import {StartScreenComponent} from './start-screen/start-screen.component';
 import {AppRoutingModule} from "./app-routing.module";
-import { ManualComponent } from './manual/manual.component';
+import {ManualComponent} from './manual/manual.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { DisplayIconComponent } from './play-game/display-icon/display-icon.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {DisplayIconComponent} from './play-game/display-icon/display-icon.component';
+import {TutorialContainerComponent} from './play-game/tutorial-container/tutorial-container.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PlayGameComponent,
     StartScreenComponent,
     ManualComponent,
-    DisplayIconComponent
+    DisplayIconComponent,
+    TutorialContainerComponent
   ],
   imports: [
     BrowserModule,

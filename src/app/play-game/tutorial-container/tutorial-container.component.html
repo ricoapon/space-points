@@ -1,0 +1,114 @@
+<div class="tutorial-container">
+  <div *ngIf="tutorialStep == 1">
+    <h3 class="border-bottom border-white text-center">Welcome to Space Points</h3>
+    <p>
+      Your ship is under attack! Try to fight off as many enemies as you can. Your goal is to kill as many
+      <span class="color-point">flagships</span> as possible.
+    </p>
+    <p>
+      Every turn enemies attack you and you will <span class="color-health">lose 1 health</span> per turn. If it
+      reaches 0, the game is done.
+    </p>
+    <div class="text-center">
+      <h3>
+        <app-display-icon [iconType]="HEART"></app-display-icon>
+        = 0 => Game done
+      </h3>
+      <h3>
+        More
+        <app-display-icon [iconType]="POINT"></app-display-icon>
+        = Better
+      </h3>
+    </div>
+  </div>
+
+  <div *ngIf="tutorialStep == 2">
+    <h3 class="border-bottom border-white text-center">Cards</h3>
+    <p>
+      Every turn you can buy a card from a randomized set of cards. Cards cost <span class="color-money">money</span>.
+    </p>
+    <p>
+      The card "Fire lasers" is free and is always available. If you pick this card, your small lasers will shoot down
+      ships, which you loot for money. Your big lasers will shoot down flagships.
+    </p>
+    <div class="text-center">
+      <div class="row justify-content-center">
+        <div class="col-auto justify-content-center align-self-center">
+          <h1><app-display-icon [iconType]="FIRE_LASERS"></app-display-icon>=> [</h1>
+        </div>
+        <div class="col-auto">
+          <h3>
+            <app-display-icon [iconType]="SMALL_LASERS"></app-display-icon>
+            =>
+            <app-display-icon [iconType]="MONEY"></app-display-icon>
+          </h3>
+
+          <h3>
+            <app-display-icon [iconType]="BIG_LASERS"></app-display-icon>
+            =>
+            <app-display-icon [iconType]="POINT"></app-display-icon>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="tutorialStep == 3">
+    <h3 class="border-bottom border-white text-center">Milestones</h3>
+    <p>
+      Every game a randomized set of milestones are available. If you satisfy the given criteria, you gain
+      <span class="color-point">10 flags</span>.
+    </p>
+    <p>
+      Each game will have three milestones. If you play smart, you can get all of them for maximal points!
+    </p>
+    <div class="text-center">
+      <h3 class="color-health">
+        <app-display-icon [iconType]="SMALL_LASERS"></app-display-icon>
+        25 / 30 => 0
+        <app-display-icon [iconType]="POINT"></app-display-icon>
+      </h3>
+
+      <h3 class="color-point">
+        <app-display-icon [iconType]="SMALL_LASERS"></app-display-icon>
+        30 / 30 => 10
+        <app-display-icon [iconType]="POINT"></app-display-icon>
+      </h3>
+    </div>
+  </div>
+
+  <div *ngIf="tutorialStep == 4">
+    <h3 class="border-bottom border-white text-center">Good luck!</h3>
+    <p>
+      That's the basics. As you start to play you'll learn strategies around picking the best cards for your current
+      situation. If you need the tutorial again, click the menu icon in the top right. Good luck and have fun.
+    </p>
+    <div class="text-center">
+      <h3>
+        <app-display-icon [iconType]="MENU"></app-display-icon>
+        => Tutorial
+      </h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button class="w-100 btn btn-lg btn-light" [disabled]="tutorialStep <= 1"
+              (click)="tutorialStep = tutorialStep - 1">Previous
+      </button>
+    </div>
+    <div class="col">
+      <button class="w-100 btn btn-lg btn-light" (click)="activeModal.close('Skipped')">Skip</button>
+    </div>
+    <div class="col">
+      <!--suppress HtmlUnknownAttribute -->
+      <button class="w-100 btn btn-lg btn-light" *ngIf="tutorialStep < 4" (click)="tutorialStep = tutorialStep + 1" ngbAutofocus>
+        Next
+      </button>
+      <button class="w-100 btn btn-lg btn-light" *ngIf="tutorialStep == 4" (click)="activeModal.close('Finished')">
+        Play
+      </button>
+    </div>
+  </div>
+
+</div>

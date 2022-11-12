@@ -1,0 +1,16 @@
+.color-point {
+  color: #0F8B8D;
+}
+
+.color-health {
+  color: #A8201A;
+}
+
+.color-money {
+  color: #EC9A29;
+}
+
+.tutorial-container {
+  background-color: black;
+  border: 2px solid white;
+}
