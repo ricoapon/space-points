@@ -12,20 +12,18 @@
     </p>
     <ul>
       <li>The turn counter</li>
-      <li>The number of resources you have (money, points, etc)</li>
-      <li>The amount of production per resource (money production, point production, etc)</li>
+      <li>The number of resources you have (money, flags, etc)</li>
+      <li>The amount of weapons you have (small lasers, big lasers)</li>
     </ul>
     <p>
       In the middle of the screen you see a list of cards from which you can buy one every turn. At the bottom of the
-      screen you can see the milestones that are active during the game. Milestones are grayed out, until you achieved
-      it. You can click on each milestone to see its details.
+      screen you can see the milestones that are active during the game. Milestones are red, until you achieved it.
     </p>
-
     <h2>Turn</h2>
     <p>
       Every turn you are given a choice of {{ INITIAL_NR_OF_CARDS_PER_DRAFT + 1 }} cards. One of those cards is always
-      "Trigger Production". This card is free and increases your points and money by as much as you have point and money
-      production. The other three cards can have any kind of effect. See below for a full list of all the cards.
+      "Fire lasers". This card is free and increases your flags and money by as much as you have big lasers and small
+      lasers. The other three cards can have any kind of effect. See below for a full list of all the cards.
     </p>
     <h2>Milestones</h2>
     <p>
@@ -45,7 +43,6 @@
         {{ card.title }} ({{card.cost}} money): {{ card.description }}.
       </li>
     </ul>
-
     <a routerLink="/" class="w-100 btn btn-lg btn-light">Back to main screen</a>
   </main>
 </div>
