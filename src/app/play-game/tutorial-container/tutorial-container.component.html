@@ -34,7 +34,10 @@
     <div class="text-center">
       <div class="row justify-content-center">
         <div class="col-auto justify-content-center align-self-center">
-          <h1><app-display-icon [iconType]="FIRE_LASERS"></app-display-icon>=> [</h1>
+          <h1>
+            <app-display-icon [iconType]="FIRE_LASERS"></app-display-icon>
+            => [
+          </h1>
         </div>
         <div class="col-auto">
           <h3>
@@ -78,6 +81,42 @@
   </div>
 
   <div *ngIf="tutorialStep == 4">
+    <h3 class="border-bottom border-white text-center">Dashboard</h3>
+    <p>
+      On the top of the screen you have the dashboard, which shows you information about the game. Every block indicates
+      how many of that resource are available or how many times you played a card.
+    </p>
+    <div class="text-center">
+      <h3>
+        <app-display-icon [iconType]="HEART"></app-display-icon> 20
+        => You have 20 health
+      </h3>
+      <h3>
+        <app-display-icon [iconType]="FIRE_LASERS"></app-display-icon> 3
+        => You have fired lasers 3 times
+      </h3>
+      <h3>
+        <app-display-icon [iconType]="MONEY"></app-display-icon> 7
+        => You have 7 money
+      </h3>
+    </div>
+  </div>
+
+  <div *ngIf="tutorialStep == 5">
+    <h3 class="border-bottom border-white text-center">Full screen</h3>
+    <p>
+      The game can be played on mobile and PC. It is highly advised to enable full screen when playing this game on
+      mobile. This will make it easier to see all the elements on the screen. You can enable this in the menu.
+    </p>
+    <div class="text-center">
+      <h3>
+        <app-display-icon [iconType]="MENU"></app-display-icon>
+        => Full screen
+      </h3>
+    </div>
+  </div>
+
+  <div *ngIf="tutorialStep == 6">
     <h3 class="border-bottom border-white text-center">Good luck!</h3>
     <p>
       That's the basics. As you start to play you'll learn strategies around picking the best cards for your current
@@ -102,10 +141,11 @@
     </div>
     <div class="col">
       <!--suppress HtmlUnknownAttribute -->
-      <button class="w-100 btn btn-lg btn-light" *ngIf="tutorialStep < 4" (click)="tutorialStep = tutorialStep + 1" ngbAutofocus>
+      <button class="w-100 btn btn-lg btn-light" *ngIf="tutorialStep < 6" (click)="tutorialStep = tutorialStep + 1"
+              ngbAutofocus>
         Next
       </button>
-      <button class="w-100 btn btn-lg btn-light" *ngIf="tutorialStep == 4" (click)="activeModal.close('Finished')">
+      <button class="w-100 btn btn-lg btn-light" *ngIf="tutorialStep >= 6" (click)="activeModal.close('Finished')">
         Play
       </button>
     </div>

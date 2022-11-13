@@ -8,7 +8,7 @@ import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ['./tutorial-container.component.css']
 })
 export class TutorialContainerComponent implements OnInit {
-  tutorialStep = 1
+  tutorialStep: number = 1
 
   MENU = IconType.MENU
   POINT = IconType.POINT
