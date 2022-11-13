@@ -49,10 +49,10 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: 3,
       title: "Install big laser",
-      description: "Get 1 big laser",
-      cost: 10,
+      description: "Get 2 big lasers",
+      cost: 5,
       execute: (gameState: GameState) => {
-        gameState.bigLasers += 1
+        gameState.bigLasers += 2
       }
     },
     {
