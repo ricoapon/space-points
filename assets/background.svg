@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 512px; width: 512px;">
+  <defs>
+    <filter id="blur-corona">
+      <feGaussianBlur stdDeviation="10" />
+    </filter>
+    <filter id="blur-sun" x="-100" y="-100" width="200" height="200">
+      <feGaussianBlur stdDeviation="13" />
+    </filter>
+  </defs>
+  <g id="icon" transform="translate(0,0)" style="">
+    <!-- Black background. -->
+    <rect fill="black" width="512" height="512" y="0" x="0"/>
+
+     <!-- Black circle insight a slightly larger white circle, where the white circle is blurred.
+          This gives the corona effect.-->
+    <circle r="200" fill="white" cx="256" cy="250" filter="url(#blur-corona)"/>
+    <circle r="199" fill="black" cx="256" cy="256"/>
+
+    <!-- Blurred circle that is less blurred on the top represents the sun. -->
+    <circle r="30" fill="white" cx="256" cy="56" filter="url(#blur-sun)" />
+  </g>
+</svg>
