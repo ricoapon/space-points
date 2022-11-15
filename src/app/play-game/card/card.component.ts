@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 import {Card} from "../../backend/card";
+import {IconSize, IconType} from "../display-icon/display-icon.component";
 
 @Component({
   selector: 'app-card[card]',
@@ -23,6 +24,9 @@ export class CardComponent implements OnInit {
   @Output() disableOtherCards: EventEmitter<boolean> = new EventEmitter<boolean>()
   classes: String[] = []
   flipState = "inactive"
+
+  HEART = IconType.HEART
+  SMALL = IconSize.SMALL
 
   ngOnInit(): void {
     if (this.canBeBought) {

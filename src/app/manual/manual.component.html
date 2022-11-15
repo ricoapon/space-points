@@ -22,12 +22,21 @@
     <p>
       Every turn you are given a choice of {{ INITIAL_NR_OF_CARDS_PER_DRAFT + 1 }} cards. One of those cards is always
       "Fire lasers". This card is free and increases your flags and money by as much as you have big lasers and small
-      lasers. The other three cards can have any kind of effect. See below for a full list of all the cards.
+      lasers. The other cards can have any kind of effect. See below for a full list of all the cards.
     </p>
     <h2>Cards</h2>
     <ul>
       <li *ngFor="let card of getAllCards()">
-        {{ card.title }} ({{card.cost}} money): {{ card.description }}.
+        {{ card.title }} ({{card.cost}} money): {{ card.description }}.<br/>
+        <span *ngIf="card.showIfHealthIsHigherThan && !card.showIfHealthIsLowerThan">
+          Only shown if health is larger or equal to {{ card.showIfHealthIsHigherThan }}.
+        </span>
+        <span *ngIf="card.showIfHealthIsLowerThan && !card.showIfHealthIsHigherThan">
+          Only shown if health is smaller or equal to {{ card.showIfHealthIsLowerThan }}.
+        </span>
+        <span *ngIf="card.showIfHealthIsLowerThan && card.showIfHealthIsHigherThan">
+          Only shown if health is between {{ card.showIfHealthIsLowerThan }} and {{ card.showIfHealthIsHigherThan }}.
+        </span>
       </li>
     </ul>
     <a routerLink="/" class="w-100 btn btn-lg btn-light">Back to main screen</a>

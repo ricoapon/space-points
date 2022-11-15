@@ -10,6 +10,11 @@ export enum IconType {
   MENU,
 }
 
+export enum IconSize {
+  SMALL,
+  NORMAL,
+}
+
 @Component({
   selector: 'app-display-icon',
   templateUrl: './display-icon.component.html',
@@ -18,6 +23,7 @@ export enum IconType {
 export class DisplayIconComponent {
   @Input() iconType: IconType;
   @Input() color: String;
+  @Input() iconSize: IconSize = IconSize.NORMAL;
 
   getPathToIcon() {
     let name: String = IconType[this.iconType].toLowerCase()
@@ -25,7 +31,16 @@ export class DisplayIconComponent {
   }
 
   determineStyle() {
-    return {color: "var(--bs-" + this.determineColor() + ")"};
+    return {color: "var(--bs-" + this.determineColor() + ")", width: this.determineSizeInPixels()};
+  }
+
+  private determineSizeInPixels(): number {
+    switch(this.iconSize) {
+      case IconSize.SMALL:
+        return 23;
+      case IconSize.NORMAL:
+        return 45;
+    }
   }
 
   private determineColor(): String {

@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {GameState} from "./game-state";
-import {allCards, allCardsWithoutProduce, Card, cardFireLasers} from "./card";
+import {allCards, allCardsWithoutProduceFilteredByHealth, Card, cardFireLasers} from "./card";
 import {Randomizer} from "./randomizer";
 
 export enum GameEventType {
@@ -48,7 +48,7 @@ export class Game {
 
   private determineNextCards(): Card[] {
     const result = [cardFireLasers(),
-      ...(this.randomizer.getRandomElementsFromArray(allCardsWithoutProduce(), this.gameState.nrOfCardsPerDraft))];
+      ...(this.randomizer.getRandomElementsFromArray(allCardsWithoutProduceFilteredByHealth(this.gameState.health), this.gameState.nrOfCardsPerDraft))];
 
     // Ensure cards on the screen are in a consistent order. Not sure if this is needed, but seems nice.
     result.sort((c1, c2) => c1.cardId - c2.cardId)

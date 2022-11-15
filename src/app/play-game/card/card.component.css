@@ -49,10 +49,16 @@
   box-shadow: 5px 5px 30px 7px rgba(var(--bs-primary-rgb), 0.1), -5px -5px 30px 7px rgba(var(--bs-primary-rgb), 0.1) !important;
 }
 
+.s-card-top-container {
+  display: flex;
+  margin-bottom: -5px;
+}
+
 .s-card-cost-container {
   position: relative;
   top: -5px;
   left: -5px;
+  width: 26px;
 }
 
 .s-card-cost-container > span {
@@ -66,9 +72,15 @@
   margin-right: 6px;
 }
 
-.s-card-title {
+.s-card-min-max-health-container {
   position: relative;
-  top: -10px;
+  top: -5px;
+  right: -5px;
+  background: #A8201A;
+  color: black;
+}
+
+.s-card-title {
 }
 
 .s-card-image-container {

@@ -3,10 +3,28 @@
      [@flipState]="flipState"
      [class]="classes.join(' ')">
   <div class="s-card-container">
-    <div class="s-card-cost-container">
+    <div class="s-card-top-container">
+      <div class="s-card-cost-container">
       <span>
         {{ card.cost }}
       </span>
+      </div>
+
+      <div class="s-card-min-max-health-container" style="margin-left: auto">
+        <span *ngIf="card.showIfHealthIsHigherThan !== undefined">
+          {{ card.showIfHealthIsHigherThan }}
+          <=
+        </span>
+
+        <span *ngIf="card.showIfHealthIsHigherThan !== undefined || card.showIfHealthIsLowerThan !== undefined">
+          <app-display-icon [iconType]="HEART" [iconSize]="SMALL"></app-display-icon>
+        </span>
+
+        <span *ngIf="card.showIfHealthIsLowerThan !== undefined">
+          <=
+          {{ card.showIfHealthIsLowerThan }}
+        </span>
+      </div>
     </div>
 
     <div class="s-card-title">
