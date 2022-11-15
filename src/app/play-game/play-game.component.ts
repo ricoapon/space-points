@@ -47,7 +47,7 @@ export class PlayGameComponent implements OnInit {
     }).result.then(
       () => {
         // It doesn't matter how the user closed the tutorial: don't show it again.
-        this.cookieService.set('finished_tutorial', 'true')
+        this.cookieService.set('finished_tutorial', 'true', 365)
       },
     );
   }
