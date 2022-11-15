@@ -16,8 +16,7 @@
       <li>The amount of weapons you have (small lasers, big lasers)</li>
     </ul>
     <p>
-      In the middle of the screen you see a list of cards from which you can buy one every turn. At the bottom of the
-      screen you can see the milestones that are active during the game. Milestones are red, until you achieved it.
+      In the middle of the screen you see a list of cards from which you can buy one every turn.
     </p>
     <h2>Turn</h2>
     <p>
@@ -25,18 +24,6 @@
       "Fire lasers". This card is free and increases your flags and money by as much as you have big lasers and small
       lasers. The other three cards can have any kind of effect. See below for a full list of all the cards.
     </p>
-    <h2>Milestones</h2>
-    <p>
-      Every game, a random set of milestones are selected. Each milestone always has the same concept: you have to
-      satisfy certain requirements. If you satisfy the requirements at the end of the turn, you gain the milestone and
-      are awarded a number of resources. You can gain as many milestones per turn. These are the full list of
-      milestones:
-    </p>
-    <ul>
-      <li *ngFor="let milestone of getAllMilestones()">
-        {{ milestone.name }} ({{milestone.pointsReward}} points): {{ milestone.requirements }}.
-      </li>
-    </ul>
     <h2>Cards</h2>
     <ul>
       <li *ngFor="let card of getAllCards()">

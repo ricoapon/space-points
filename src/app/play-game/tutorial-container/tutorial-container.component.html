@@ -57,30 +57,6 @@
   </div>
 
   <div *ngIf="tutorialStep == 3">
-    <h1 class="border-bottom border-white text-center">Milestones</h1>
-    <p>
-      Every game a randomized set of milestones are available. If you satisfy the given criteria, you gain
-      <span class="color-point">10 flags</span>.
-    </p>
-    <p>
-      Each game will have three milestones. If you play smart, you can get all of them for maximal points!
-    </p>
-    <div class="text-center">
-      <h3 class="color-health">
-        <app-display-icon [iconType]="SMALL_LASERS"></app-display-icon>
-        25 / 30 => 0
-        <app-display-icon [iconType]="POINT"></app-display-icon>
-      </h3>
-
-      <h3 class="color-point">
-        <app-display-icon [iconType]="SMALL_LASERS"></app-display-icon>
-        30 / 30 => 10
-        <app-display-icon [iconType]="POINT"></app-display-icon>
-      </h3>
-    </div>
-  </div>
-
-  <div *ngIf="tutorialStep == 4">
     <h1 class="border-bottom border-white text-center">Dashboard</h1>
     <p>
       On the top of the screen you have the dashboard, which shows you information about the game. Every block indicates
@@ -102,7 +78,7 @@
     </div>
   </div>
 
-  <div *ngIf="tutorialStep == 5">
+  <div *ngIf="tutorialStep == 4">
     <h1 class="border-bottom border-white text-center">Full screen</h1>
     <p>
       The game can be played on mobile and PC. It is highly advised to enable full screen when playing this game on
@@ -116,7 +92,7 @@
     </div>
   </div>
 
-  <div *ngIf="tutorialStep == 6">
+  <div *ngIf="tutorialStep == 5">
     <h1 class="border-bottom border-white text-center">Good luck!</h1>
     <p>
       That's the basics. As you start to play you'll learn strategies around picking the best cards for your current
@@ -141,11 +117,11 @@
     </div>
     <div class="col">
       <!--suppress HtmlUnknownAttribute -->
-      <button class="w-100 btn btn-lg btn-light" *ngIf="tutorialStep < 6" (click)="tutorialStep = tutorialStep + 1"
+      <button class="w-100 btn btn-lg btn-light" *ngIf="tutorialStep < 5" (click)="tutorialStep = tutorialStep + 1"
               ngbAutofocus>
         Next
       </button>
-      <button class="w-100 btn btn-lg btn-light" *ngIf="tutorialStep >= 6" (click)="activeModal.close('Finished')">
+      <button class="w-100 btn btn-lg btn-light" *ngIf="tutorialStep >= 5" (click)="activeModal.close('Finished')">
         Play
       </button>
     </div>

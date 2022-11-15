@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
 import {GameState} from "./game-state";
 import {allCards, allCardsWithoutProduce, Card, cardFireLasers} from "./card";
-import {allMilestones} from "./milestone";
 import {Randomizer} from "./randomizer";
 
 export enum GameEventType {
@@ -27,13 +26,11 @@ export class Game {
   public start(): Card[] {
     this.gameState = new GameState();
     this.randomizer = new Randomizer();
-    this.gameState.milestonesInGame = this.randomizer.getRandomElementsFromArray(allMilestones(), 3);
     return this.determineNextCards();
   }
 
   public pickCard(cardId: number): GameEvent {
     this.playCard(cardId);
-    this.checkAchievedMilestones();
     this.gameState.health -= 1;
 
     if (this.gameState.health < 1) {
@@ -70,18 +67,5 @@ export class Game {
 
     this.gameState.money -= card.cost;
     card.execute(this.gameState)
-  }
-
-  private checkAchievedMilestones() {
-    for (let milestone of this.gameState.milestonesInGame) {
-      if (this.gameState.achievedMilestoneIds.some(x => x == milestone.milestoneId)) {
-        continue
-      }
-
-      if (milestone.progression(this.gameState) >= milestone.maxProgression) {
-        this.gameState.achievedMilestoneIds.push(milestone.milestoneId)
-        this.gameState.points += milestone.pointsReward
-      }
-    }
   }
 }

@@ -4,13 +4,9 @@
       <app-dashboard [gameState]="this.game.getGameState()"></app-dashboard>
     </div>
 
-    <div class="row mb-4">
+    <div class="row">
       <app-card-container [shownCards]="shownCards" [gameState]="this.game.getGameState()"
                           (selectCard)="pickCard($event)"></app-card-container>
-    </div>
-
-    <div class="row">
-      <app-milestone-container [gameState]="this.game.getGameState()"></app-milestone-container>
     </div>
   </div>
   <div *ngIf="finishedGame" class="container text-center bg-black">
