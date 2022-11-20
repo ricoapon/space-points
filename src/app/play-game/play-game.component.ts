@@ -4,6 +4,7 @@ import {Card} from "../backend/card";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {TutorialContainerComponent} from "./tutorial-container/tutorial-container.component";
 import {CookieService} from "ngx-cookie-service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-play-game',
@@ -13,10 +14,8 @@ import {CookieService} from "ngx-cookie-service";
 export class PlayGameComponent implements OnInit {
   game: Game;
   shownCards: Card[];
-  finishedGame: boolean = false;
-  finalPoints: number;
 
-  constructor(game: Game, private modalService: NgbModal, private cookieService: CookieService) {
+  constructor(game: Game, private modalService: NgbModal, private cookieService: CookieService, private router: Router) {
     this.game = game;
     this.shownCards = this.game.start();
   }
@@ -31,8 +30,7 @@ export class PlayGameComponent implements OnInit {
     const gameEvent = this.game.pickCard(cardId);
     switch (gameEvent.gameEventType) {
       case GameEventType.FINISHED_GAME:
-        this.finishedGame = true;
-        this.finalPoints = gameEvent.finalPoints!;
+        this.router.navigateByUrl('/submit-highscore', {state: {highscore: gameEvent.finalPoints!}})
         break;
       case GameEventType.NEWLY_SELECTED_CARDS:
         this.shownCards = gameEvent.cards!;

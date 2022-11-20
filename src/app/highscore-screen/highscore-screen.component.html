@@ -1,0 +1,17 @@
+<div id="start-container">
+  <main class="main m-auto text-center">
+    <h1 class="mb-3">Highscores</h1>
+    <div *ngFor="let highscore of highscores; let i = index" class="row">
+      <h3 class="col-1">
+        {{ i + 1 }}
+      </h3>
+      <h3 class="col-2 text-end">
+        {{highscore.score}}
+      </h3>
+      <h3 class="col-9">
+        {{sanitize(highscore.name)}}
+      </h3>
+    </div>
+    <a routerLink="/" class="mt-3 w-100 btn btn-lg btn-light">Back to menu</a>
+  </main>
+</div>

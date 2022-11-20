@@ -1,5 +1,5 @@
 <div class="vertical-center">
-  <div *ngIf="!finishedGame" class="container-md my-container">
+  <div class="container-md my-container">
     <div class="row mb-4">
       <app-dashboard [gameState]="this.game.getGameState()"></app-dashboard>
     </div>
@@ -8,10 +8,5 @@
       <app-card-container [shownCards]="shownCards" [gameState]="this.game.getGameState()"
                           (selectCard)="pickCard($event)"></app-card-container>
     </div>
-  </div>
-  <div *ngIf="finishedGame" class="container text-center bg-black">
-    <h1>Congratulations! You finished the game and killed
-      <span class="color-points">{{ this.finalPoints }}</span> flagships.</h1>
-    <a routerLink="/" class="btn btn-lg btn-light">Back to menu</a>
   </div>
 </div>

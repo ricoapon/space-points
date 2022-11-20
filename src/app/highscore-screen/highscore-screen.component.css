@@ -1,0 +1,13 @@
+#start-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.main {
+  width: 600px;
+  padding: 15px;
+  background-color: black;
+  margin-top: auto;
+  margin-bottom: auto;
+}

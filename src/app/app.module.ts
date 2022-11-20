@@ -14,6 +14,10 @@ import {DisplayIconComponent} from './play-game/display-icon/display-icon.compon
 import {TutorialContainerComponent} from './play-game/tutorial-container/tutorial-container.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {CookieService} from "ngx-cookie-service";
+import {HttpClientModule} from "@angular/common/http";
+import { HighscoreScreenComponent } from './highscore-screen/highscore-screen.component';
+import { SubmitHighscoreScreenComponent } from './submit-highscore-screen/submit-highscore-screen.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -25,13 +29,17 @@ import {CookieService} from "ngx-cookie-service";
     StartScreenComponent,
     ManualComponent,
     DisplayIconComponent,
-    TutorialContainerComponent
+    TutorialContainerComponent,
+    HighscoreScreenComponent,
+    SubmitHighscoreScreenComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
