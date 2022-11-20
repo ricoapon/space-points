@@ -137,7 +137,7 @@ export function allCardsWithoutProduce(): Card[] {
       cardId: 8,
       title: "Temporary upgrade",
       description: "Destroy one flag ship for each small laser",
-      cost: 60,
+      cost: 30,
       execute: (gameState: GameState) => {
         gameState.points += gameState.smallLasers
       },
@@ -157,7 +157,7 @@ export function allCardsWithoutProduce(): Card[] {
       cardId: 10,
       title: "Overdrive",
       description: "Fire lasers 2 times, but lose 5 big lasers",
-      cost: 25,
+      cost: 10,
       execute: (gameState: GameState) => {
         if (gameState.bigLasers >= 5) {
           gameState.money += gameState.smallLasers * 2
