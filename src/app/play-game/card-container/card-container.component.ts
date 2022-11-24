@@ -20,6 +20,7 @@ export class CardContainerComponent implements OnChanges {
   }
 
   canBeBought(card: Card) {
-    return card.cost <= this.gameState.money;
+    return card.cost <= this.gameState.money &&
+      (card.canBeBought == undefined || card.canBeBought(this.gameState));
   }
 }

@@ -8,6 +8,7 @@ export type Card = {
   execute: (gameState: GameState) => void,
   showIfHealthIsLowerThan?: number,
   showIfHealthIsHigherThan?: number,
+  canBeBought?: (gameState: GameState) => boolean,
 }
 
 export function allCards(): Card[] {
@@ -102,28 +103,27 @@ export function allCardsWithoutProduce(): Card[] {
       description: "Convert 3 small lasers into big lasers",
       cost: 5,
       execute: (gameState: GameState) => {
-        if (gameState.smallLasers >= 3) {
-          gameState.smallLasers -= 3
-          gameState.bigLasers += 3
-        } else {
-          gameState.bigLasers += gameState.smallLasers
-          gameState.smallLasers = 0
-        }
+        gameState.smallLasers -= 3
+        gameState.bigLasers += 3
       },
       showIfHealthIsLowerThan: 17,
+      canBeBought: (gameState: GameState) => {
+        return gameState.smallLasers >= 3
+      }
     },
     {
       cardId: cardId++,
       title: "Space Haven",
-      description: "Heal by 5 HP (can only be used twice)",
+      description: "Heal by 5 HP (can only be bought twice)",
       cost: 40,
       execute: (gameState: GameState) => {
         gameState.deadlineCounter += 1
-        if (gameState.deadlineCounter <= 2) {
-          gameState.health += 5
-        }
+        gameState.health += 5
       },
       showIfHealthIsLowerThan: 10,
+      canBeBought: (gameState: GameState) => {
+        return gameState.deadlineCounter < 2
+      }
     },
     {
       cardId: cardId++,
@@ -160,14 +160,15 @@ export function allCardsWithoutProduce(): Card[] {
       description: "Fire lasers 2 times, but lose 5 big lasers",
       cost: 10,
       execute: (gameState: GameState) => {
-        if (gameState.bigLasers >= 5) {
-          gameState.money += gameState.smallLasers * 2
-          gameState.points += gameState.bigLasers * 2
-          gameState.bigLasers -= 5
-        }
+        gameState.money += gameState.smallLasers * 2
+        gameState.points += gameState.bigLasers * 2
+        gameState.bigLasers -= 5
       },
       showIfHealthIsLowerThan: 17,
       showIfHealthIsHigherThan: 10,
+      canBeBought: (gameState: GameState) => {
+        return gameState.bigLasers >= 5
+      }
     },
   ]
 }
