@@ -44,9 +44,10 @@ export function allCardsWithoutProduceFilteredByHealth(health: number): Card[] {
 }
 
 export function allCardsWithoutProduce(): Card[] {
+  let cardId = 1
   return [
     {
-      cardId: 1,
+      cardId: cardId++,
       title: "Small business Contract",
       description: "Get 5 small lasers",
       cost: 10,
@@ -56,7 +57,7 @@ export function allCardsWithoutProduce(): Card[] {
       showIfHealthIsHigherThan: 10,
     },
     {
-      cardId: 2,
+      cardId: cardId++,
       title: "Big business Contract",
       description: "Get 10 small lasers",
       cost: 20,
@@ -66,7 +67,7 @@ export function allCardsWithoutProduce(): Card[] {
       showIfHealthIsLowerThan: 17,
     },
     {
-      cardId: 3,
+      cardId: cardId++,
       title: "Remote bomb",
       description: "Destroy 15 enemy flagships",
       cost: 20,
@@ -76,7 +77,7 @@ export function allCardsWithoutProduce(): Card[] {
       showIfHealthIsLowerThan: 17,
     },
     {
-      cardId: 4,
+      cardId: cardId++,
       title: "Install big lasers",
       description: "Get 2 big lasers",
       cost: 5,
@@ -86,7 +87,7 @@ export function allCardsWithoutProduce(): Card[] {
       showIfHealthIsHigherThan: 10,
     },
     {
-      cardId: 5,
+      cardId: cardId++,
       title: "Install big mama lasers",
       description: "Get 5 big lasers",
       cost: 15,
@@ -96,7 +97,7 @@ export function allCardsWithoutProduce(): Card[] {
       showIfHealthIsLowerThan: 17,
     },
     {
-      cardId: 6,
+      cardId: cardId++,
       title: "Weapon Research",
       description: "Convert 3 small lasers into big lasers",
       cost: 5,
@@ -112,7 +113,7 @@ export function allCardsWithoutProduce(): Card[] {
       showIfHealthIsLowerThan: 17,
     },
     {
-      cardId: 7,
+      cardId: cardId++,
       title: "Space Haven",
       description: "Heal by 5 HP (can only be used twice)",
       cost: 40,
@@ -125,7 +126,7 @@ export function allCardsWithoutProduce(): Card[] {
       showIfHealthIsLowerThan: 10,
     },
     {
-      cardId: 8,
+      cardId: cardId++,
       title: "Radar",
       description: "Show 1 more card every turn",
       cost: 15,
@@ -134,7 +135,7 @@ export function allCardsWithoutProduce(): Card[] {
       }
     },
     {
-      cardId: 9,
+      cardId: cardId++,
       title: "Temporary upgrade",
       description: "Destroy one flag ship for each small laser",
       cost: 30,
@@ -144,7 +145,7 @@ export function allCardsWithoutProduce(): Card[] {
       showIfHealthIsLowerThan: 5,
     },
     {
-      cardId: 10,
+      cardId: cardId++,
       title: "Seeing double",
       description: "Double the number of big lasers",
       cost: 60,
@@ -154,7 +155,7 @@ export function allCardsWithoutProduce(): Card[] {
       showIfHealthIsLowerThan: 5,
     },
     {
-      cardId: 11,
+      cardId: cardId++,
       title: "Overdrive",
       description: "Fire lasers 2 times, but lose 5 big lasers",
       cost: 10,
