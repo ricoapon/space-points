@@ -31,15 +31,17 @@ export class DisplayIconComponent {
   }
 
   determineStyle() {
-    return {color: "var(--bs-" + this.determineColor() + ")", width: this.determineSizeInPixels()};
+    return {color: "var(--bs-" + this.determineColor() + ")"};
   }
 
-  private determineSizeInPixels(): number {
+  determineSizeInPixels(): String {
+    // Firefox does not allow styling width on the svg tag. To fix this, we must set the "width" attribute this way.
+    // A bit annoying, but it is what it is. Works on all browsers correctly with this approach.
     switch(this.iconSize) {
       case IconSize.SMALL:
-        return 23;
+        return "23px";
       case IconSize.NORMAL:
-        return 45;
+        return "45px";
     }
   }
 
