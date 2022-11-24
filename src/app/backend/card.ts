@@ -69,16 +69,6 @@ export function allCardsWithoutProduce(): Card[] {
     },
     {
       cardId: cardId++,
-      title: "Remote bomb",
-      description: "Destroy 15 enemy flagships",
-      cost: 20,
-      execute: (gameState: GameState) => {
-        gameState.points += 15
-      },
-      showIfHealthIsLowerThan: 17,
-    },
-    {
-      cardId: cardId++,
       title: "Install big lasers",
       description: "Get 2 big lasers",
       cost: 5,
@@ -157,17 +147,16 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Overdrive",
-      description: "Fire lasers 2 times, but lose 5 big lasers",
-      cost: 10,
+      description: "Fire lasers 2 times, then lose 50% of all big lasers (rounded down)",
+      cost: 50,
       execute: (gameState: GameState) => {
         gameState.money += gameState.smallLasers * 2
         gameState.points += gameState.bigLasers * 2
-        gameState.bigLasers -= 5
+        gameState.bigLasers -= Math.floor(gameState.bigLasers / 2)
       },
-      showIfHealthIsLowerThan: 17,
-      showIfHealthIsHigherThan: 10,
+      showIfHealthIsLowerThan: 10,
       canBeBought: (gameState: GameState) => {
-        return gameState.bigLasers >= 5
+        return gameState.bigLasers >= 1
       }
     },
   ]
