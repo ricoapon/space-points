@@ -86,11 +86,12 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Install Big Lasers",
-      descriptionGame: () => "Gain 2 big lasers",
-      descriptionManual: "Gain 2 big lasers",
+      descriptionGame: () => "Gain 2 big lasers and 1 HP",
+      descriptionManual: "Gain 2 big lasers and 1 HP",
       cost: 5,
       execute: (gameState: GameState) => {
         gameState.bigLasers += 2
+        gameState.health += 1
       },
       showIfHealthIsHigherThan: 10,
     },
@@ -108,12 +109,13 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Weapon Research",
-      descriptionGame: () => "Convert 3 small lasers into 3 big lasers",
-      descriptionManual: "Convert 3 small lasers into 3 big lasers",
+      descriptionGame: () => "Convert 3 small lasers into 3 big lasers and gain 1 HP",
+      descriptionManual: "Convert 3 small lasers into 3 big lasers and gain 1 HP",
       cost: 5,
       execute: (gameState: GameState) => {
         gameState.smallLasers -= 3
         gameState.bigLasers += 3
+        gameState.health += 1
       },
       showIfHealthIsLowerThan: 17,
       canBeBought: (gameState: GameState) => {
