@@ -10,5 +10,6 @@ export class GameState {
   public smallLasers = 5
   public bigLasers = 0
   public lasersFiredCounter = 0
-  public deadlineCounter = 0
+  public spaceHavenCounter = 0
+  public remoteBombCounter = 0
 }

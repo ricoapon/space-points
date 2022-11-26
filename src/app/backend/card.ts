@@ -3,7 +3,8 @@ import {GameState} from "./game-state";
 export type Card = {
   cardId: number,
   title: String,
-  description: String,
+  descriptionGame: (gameState: GameState) => String,
+  descriptionManual: String,
   cost: number,
   execute: (gameState: GameState) => void,
   showIfHealthIsLowerThan?: number,
@@ -19,7 +20,8 @@ export function cardFireLasers(): Card {
   return {
     cardId: -1,
     title: "Fire lasers",
-    description: "Shoot down enemy ships for resources",
+    descriptionGame: () => "Shoot down enemy ships for resources",
+    descriptionManual: "Shoot down enemy ships for resources",
     cost: 0,
     execute: (gameState: GameState) => {
       gameState.money += gameState.smallLasers
@@ -49,8 +51,9 @@ export function allCardsWithoutProduce(): Card[] {
   return [
     {
       cardId: cardId++,
-      title: "Small business Contract",
-      description: "Get 5 small lasers",
+      title: "Small Business Contract",
+      descriptionGame: () => "Get 5 small lasers",
+      descriptionManual: "Get 5 small lasers",
       cost: 10,
       execute: (gameState: GameState) => {
         gameState.smallLasers += 5
@@ -59,8 +62,9 @@ export function allCardsWithoutProduce(): Card[] {
     },
     {
       cardId: cardId++,
-      title: "Big business Contract",
-      description: "Get 10 small lasers",
+      title: "Big Business Contract",
+      descriptionGame: () => "Get 10 small lasers",
+      descriptionManual: "Get 10 small lasers",
       cost: 20,
       execute: (gameState: GameState) => {
         gameState.smallLasers += 10
@@ -69,8 +73,21 @@ export function allCardsWithoutProduce(): Card[] {
     },
     {
       cardId: cardId++,
+      title: "Big Bomb",
+      descriptionGame: (gameState: GameState) => "Destroy " + (gameState.remoteBombCounter + 1) * 15 + " enemy flagships. (Increases per use)",
+      descriptionManual: "Destroy 15 enemy flagships for every time you played this card.",
+      cost: 15,
+      execute: (gameState: GameState) => {
+        gameState.remoteBombCounter += 1
+        gameState.points += gameState.remoteBombCounter * 15
+      },
+      showIfHealthIsLowerThan: 17,
+    },
+    {
+      cardId: cardId++,
       title: "Install big lasers",
-      description: "Get 2 big lasers",
+      descriptionGame: () => "Get 2 big lasers",
+      descriptionManual: "Get 2 big lasers",
       cost: 5,
       execute: (gameState: GameState) => {
         gameState.bigLasers += 2
@@ -80,7 +97,8 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Install big mama lasers",
-      description: "Get 5 big lasers",
+      descriptionGame: () => "Get 5 big lasers",
+      descriptionManual: "Get 5 big lasers",
       cost: 15,
       execute: (gameState: GameState) => {
         gameState.bigLasers += 5
@@ -90,7 +108,8 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Weapon Research",
-      description: "Convert 3 small lasers into big lasers",
+      descriptionGame: () => "Convert 3 small lasers into big lasers",
+      descriptionManual: "Convert 3 small lasers into big lasers",
       cost: 5,
       execute: (gameState: GameState) => {
         gameState.smallLasers -= 3
@@ -104,21 +123,23 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Space Haven",
-      description: "Heal by 5 HP (can only be bought twice)",
+      descriptionGame: (gameState: GameState) => "Heal by 5 HP (" + gameState.spaceHavenCounter + "/2)",
+      descriptionManual: "Heal by 5 HP (can only be bought twice)",
       cost: 40,
       execute: (gameState: GameState) => {
-        gameState.deadlineCounter += 1
+        gameState.spaceHavenCounter += 1
         gameState.health += 5
       },
       showIfHealthIsLowerThan: 10,
       canBeBought: (gameState: GameState) => {
-        return gameState.deadlineCounter < 2
+        return gameState.spaceHavenCounter < 2
       }
     },
     {
       cardId: cardId++,
       title: "Radar",
-      description: "Show 1 more card every turn",
+      descriptionGame: () => "Show 1 more card every turn",
+      descriptionManual: "Show 1 more card every turn",
       cost: 15,
       execute: (gameState: GameState) => {
         gameState.nrOfCardsPerDraft += 1
@@ -127,7 +148,8 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Temporary upgrade",
-      description: "Destroy one flag ship for each small laser",
+      descriptionGame: () => "Destroy one flag ship for each small laser",
+      descriptionManual: "Destroy one flag ship for each small laser",
       cost: 30,
       execute: (gameState: GameState) => {
         gameState.points += gameState.smallLasers
@@ -137,7 +159,8 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Seeing double",
-      description: "Double the number of big lasers",
+      descriptionGame: () => "Double the number of big lasers",
+      descriptionManual: "Double the number of big lasers",
       cost: 60,
       execute: (gameState: GameState) => {
         gameState.bigLasers += gameState.bigLasers
@@ -147,7 +170,8 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Overdrive",
-      description: "Fire lasers 2 times, then lose 50% of all big lasers (rounded down)",
+      descriptionGame: () => "Fire lasers 2 times, then lose 50% of all big lasers (rounded down)",
+      descriptionManual: "Fire lasers 2 times, then lose 50% of all big lasers (rounded down)",
       cost: 50,
       execute: (gameState: GameState) => {
         gameState.money += gameState.smallLasers * 2

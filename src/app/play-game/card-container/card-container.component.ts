@@ -18,9 +18,4 @@ export class CardContainerComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     this.disableCards = false;
   }
-
-  canBeBought(card: Card) {
-    return card.cost <= this.gameState.money &&
-      (card.canBeBought == undefined || card.canBeBought(this.gameState));
-  }
 }

@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 import {Card} from "../../backend/card";
 import {IconSize, IconType} from "../display-icon/display-icon.component";
+import {GameState} from "../../backend/game-state";
 
 @Component({
   selector: 'app-card[card]',
@@ -18,8 +19,8 @@ import {IconSize, IconType} from "../display-icon/display-icon.component";
 })
 export class CardComponent implements OnInit {
   @Input() card: Card;
-  @Input() canBeBought: boolean;
   @Input() disableCard: boolean;
+  @Input() gameState: GameState;
   @Output() selectCard: EventEmitter<number> = new EventEmitter<number>()
   @Output() disableOtherCards: EventEmitter<boolean> = new EventEmitter<boolean>()
   classes: String[] = []
@@ -29,11 +30,16 @@ export class CardComponent implements OnInit {
   SMALL = IconSize.SMALL
 
   ngOnInit(): void {
-    if (this.canBeBought) {
+    if (this.canBeBought()) {
       this.classes.push("can-be-bought")
     } else {
       this.classes.push("can-not-be-bought")
     }
+  }
+
+  canBeBought() {
+    return this.card.cost <= this.gameState.money &&
+      (this.card.canBeBought == undefined || this.card.canBeBought(this.gameState));
   }
 
   clickOnCard() {
@@ -41,7 +47,7 @@ export class CardComponent implements OnInit {
       return
     }
 
-    if (!this.canBeBought) {
+    if (!this.canBeBought()) {
       this.classes.push("shake")
       setTimeout(() => delete this.classes[this.classes.indexOf("shake")], 820);
       return

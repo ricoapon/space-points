@@ -27,7 +27,7 @@
     <h2>Cards</h2>
     <ul>
       <li *ngFor="let card of getAllCards()">
-        {{ card.title }} ({{card.cost}} money): {{ card.description }}.<br/>
+        {{ card.title }} ({{card.cost}} money): {{ card.descriptionManual }}.<br/>
         <span *ngIf="card.showIfHealthIsHigherThan && !card.showIfHealthIsLowerThan">
           Only shown if health is larger or equal to {{ card.showIfHealthIsHigherThan }}.
         </span>
