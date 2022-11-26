@@ -168,7 +168,7 @@ export function allCardsWithoutProduce(): Card[] {
       execute: (gameState: GameState) => {
         gameState.bigLasers += gameState.bigLasers
       },
-      showIfHealthIsLowerThan: 5,
+      showIfHealthIsLowerThan: 10,
     },
     {
       cardId: cardId++,
