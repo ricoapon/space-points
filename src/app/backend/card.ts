@@ -180,9 +180,6 @@ export function allCardsWithoutProduce(): Card[] {
         gameState.bigLasers -= Math.floor(gameState.bigLasers / 2)
       },
       showIfHealthIsLowerThan: 10,
-      canBeBought: (gameState: GameState) => {
-        return gameState.bigLasers >= 1
-      }
     },
   ]
 }
