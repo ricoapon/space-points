@@ -19,7 +19,7 @@ export function allCards(): Card[] {
 export function cardFireLasers(): Card {
   return {
     cardId: -1,
-    title: "Fire lasers",
+    title: "Fire Lasers",
     descriptionGame: () => "Shoot down enemy ships for resources",
     descriptionManual: "Shoot down enemy ships for resources",
     cost: 0,
@@ -52,8 +52,8 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Small Business Contract",
-      descriptionGame: () => "Get 5 small lasers",
-      descriptionManual: "Get 5 small lasers",
+      descriptionGame: () => "Gain 5 small lasers",
+      descriptionManual: "Gain 5 small lasers",
       cost: 10,
       execute: (gameState: GameState) => {
         gameState.smallLasers += 5
@@ -63,8 +63,8 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Big Business Contract",
-      descriptionGame: () => "Get 10 small lasers",
-      descriptionManual: "Get 10 small lasers",
+      descriptionGame: () => "Gain 10 small lasers",
+      descriptionManual: "Gain 10 small lasers",
       cost: 20,
       execute: (gameState: GameState) => {
         gameState.smallLasers += 10
@@ -86,8 +86,8 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Install Big Lasers",
-      descriptionGame: () => "Get 2 big lasers",
-      descriptionManual: "Get 2 big lasers",
+      descriptionGame: () => "Gain 2 big lasers",
+      descriptionManual: "Gain 2 big lasers",
       cost: 5,
       execute: (gameState: GameState) => {
         gameState.bigLasers += 2
@@ -97,8 +97,8 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Install Big Mama Lasers",
-      descriptionGame: () => "Get 5 big lasers",
-      descriptionManual: "Get 5 big lasers",
+      descriptionGame: () => "Gain 5 big lasers",
+      descriptionManual: "Gain 5 big lasers",
       cost: 15,
       execute: (gameState: GameState) => {
         gameState.bigLasers += 5
@@ -108,8 +108,8 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Weapon Research",
-      descriptionGame: () => "Convert 3 small lasers into big lasers",
-      descriptionManual: "Convert 3 small lasers into big lasers",
+      descriptionGame: () => "Convert 3 small lasers into 3 big lasers",
+      descriptionManual: "Convert 3 small lasers into 3 big lasers",
       cost: 5,
       execute: (gameState: GameState) => {
         gameState.smallLasers -= 3
@@ -123,8 +123,8 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Space Haven",
-      descriptionGame: (gameState: GameState) => "Heal by 5 HP (" + gameState.spaceHavenCounter + "/2)",
-      descriptionManual: "Heal by 5 HP (can only be bought twice)",
+      descriptionGame: (gameState: GameState) => "Gain 5 HP (" + gameState.spaceHavenCounter + "/2)",
+      descriptionManual: "Gain 5 HP (can only be bought twice)",
       cost: 40,
       execute: (gameState: GameState) => {
         gameState.spaceHavenCounter += 1
@@ -148,11 +148,12 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Temporary Upgrade",
-      descriptionGame: () => "Destroy one flag ship for each small laser",
-      descriptionManual: "Destroy one flag ship for each small laser",
+      descriptionGame: () => "Destroy 1 flag ship for each small laser and gain 1 HP",
+      descriptionManual: "Destroy 1 flag ship for each small laser and gain 1 HP",
       cost: 30,
       execute: (gameState: GameState) => {
         gameState.points += gameState.smallLasers
+        gameState.health += 1
       },
       showIfHealthIsLowerThan: 5,
     },
@@ -170,8 +171,8 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Overdrive",
-      descriptionGame: () => "Fire lasers 2 times, then lose 50% of all big lasers (rounded down)",
-      descriptionManual: "Fire lasers 2 times, then lose 50% of all big lasers (rounded down)",
+      descriptionGame: (gameState: GameState) => "Fire all lasers 2 times, then lose " + Math.floor(gameState.bigLasers / 2) + " big lasers",
+      descriptionManual: "Fire all lasers 2 times, then lose 50% of all big lasers (rounded down)",
       cost: 50,
       execute: (gameState: GameState) => {
         gameState.money += gameState.smallLasers * 2
