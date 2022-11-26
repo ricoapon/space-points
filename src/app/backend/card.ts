@@ -74,12 +74,12 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Big Bomb",
-      descriptionGame: (gameState: GameState) => "Destroy " + (gameState.remoteBombCounter + 1) * 15 + " enemy flagships. (Increases per use)",
-      descriptionManual: "Destroy 15 enemy flagships for every time you played this card.",
+      descriptionGame: (gameState: GameState) => "Destroy " + (gameState.remoteBombCounter + 1) * 10 + " enemy flagships. (Increases per use)",
+      descriptionManual: "Destroy 10 enemy flagships for every time you played this card.",
       cost: 15,
       execute: (gameState: GameState) => {
         gameState.remoteBombCounter += 1
-        gameState.points += gameState.remoteBombCounter * 15
+        gameState.points += gameState.remoteBombCounter * 10
       },
       showIfHealthIsLowerThan: 17,
     },
