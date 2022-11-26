@@ -85,7 +85,7 @@ export function allCardsWithoutProduce(): Card[] {
     },
     {
       cardId: cardId++,
-      title: "Install big lasers",
+      title: "Install Big Lasers",
       descriptionGame: () => "Get 2 big lasers",
       descriptionManual: "Get 2 big lasers",
       cost: 5,
@@ -96,7 +96,7 @@ export function allCardsWithoutProduce(): Card[] {
     },
     {
       cardId: cardId++,
-      title: "Install big mama lasers",
+      title: "Install Big Mama Lasers",
       descriptionGame: () => "Get 5 big lasers",
       descriptionManual: "Get 5 big lasers",
       cost: 15,
@@ -147,7 +147,7 @@ export function allCardsWithoutProduce(): Card[] {
     },
     {
       cardId: cardId++,
-      title: "Temporary upgrade",
+      title: "Temporary Upgrade",
       descriptionGame: () => "Destroy one flag ship for each small laser",
       descriptionManual: "Destroy one flag ship for each small laser",
       cost: 30,
@@ -158,7 +158,7 @@ export function allCardsWithoutProduce(): Card[] {
     },
     {
       cardId: cardId++,
-      title: "Seeing double",
+      title: "Seeing Double",
       descriptionGame: () => "Double the number of big lasers",
       descriptionManual: "Double the number of big lasers",
       cost: 60,
