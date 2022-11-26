@@ -164,7 +164,7 @@ export function allCardsWithoutProduce(): Card[] {
       title: "Seeing Double",
       descriptionGame: () => "Double the number of big lasers",
       descriptionManual: "Double the number of big lasers",
-      cost: 60,
+      cost: 30,
       execute: (gameState: GameState) => {
         gameState.bigLasers += gameState.bigLasers
       },
