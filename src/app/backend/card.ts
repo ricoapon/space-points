@@ -150,7 +150,7 @@ export function allCardsWithoutProduce(): Card[] {
       title: "Temporary Upgrade",
       descriptionGame: () => "Destroy 1 flag ship for each small laser and gain 1 HP",
       descriptionManual: "Destroy 1 flag ship for each small laser and gain 1 HP",
-      cost: 30,
+      cost: 40,
       execute: (gameState: GameState) => {
         gameState.points += gameState.smallLasers
         gameState.health += 1
