@@ -15,9 +15,10 @@ import {TutorialContainerComponent} from './play-game/tutorial-container/tutoria
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {CookieService} from "ngx-cookie-service";
 import {HttpClientModule} from "@angular/common/http";
-import { HighscoreScreenComponent } from './highscore-screen/highscore-screen.component';
-import { SubmitHighscoreScreenComponent } from './submit-highscore-screen/submit-highscore-screen.component';
+import {HighscoreScreenComponent} from './highscore-screen/highscore-screen.component';
+import {SubmitHighscoreScreenComponent} from './submit-highscore-screen/submit-highscore-screen.component';
 import {FormsModule} from "@angular/forms";
+import {FrameComponent} from './play-game/card/frame/frame.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {FormsModule} from "@angular/forms";
     DisplayIconComponent,
     TutorialContainerComponent,
     HighscoreScreenComponent,
-    SubmitHighscoreScreenComponent
+    SubmitHighscoreScreenComponent,
+    FrameComponent
   ],
   imports: [
     BrowserModule,
