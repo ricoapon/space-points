@@ -1,3 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" [style]="determineStyle()" [attr.width]="determineSizeInPixels()">
+<!-- Firefox does not allow styling width on the svg tag. To fix this, we must set the "width" attribute this way.-->
+<!-- A bit annoying, but it is what it is. Works on all browsers correctly with this approach.-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" [style]="determineStyle()" [attr.width]="'32px'">
   <use [attr.xlink:href]="getPathToIcon()"></use>
 </svg>
