@@ -1,38 +1,49 @@
+<!--suppress HtmlRequiredAltAttribute -->
 <div class="s-card"
      (click)="clickOnCard()"
      [@flipState]="flipState"
      [class]="classes.join(' ')">
   <div class="s-card-container">
-    <div class="s-card-top-container">
+
+    <app-frame [canBeBought]="canBeBought()"
+               [showIfHealthIsHigherThan]="card.showIfHealthIsHigherThan !== undefined"
+               [showIfHealthIsLowerThan]="card.showIfHealthIsLowerThan !== undefined"></app-frame>
+
+    <div class="s-card-top w-100">
       <div class="s-card-cost-container">
-      <span>
-        {{ card.cost }}
-      </span>
+        <span>
+          {{ card.cost }}
+        </span>
       </div>
 
-      <div class="s-card-min-max-health-container" style="margin-left: auto">
+      <div class="s-card-health-higher-container">
         <span *ngIf="card.showIfHealthIsHigherThan !== undefined">
           {{ card.showIfHealthIsHigherThan }}
-          <=
         </span>
-
-        <span *ngIf="card.showIfHealthIsHigherThan !== undefined || card.showIfHealthIsLowerThan !== undefined">
-          <app-display-icon [iconType]="HEART" [iconSize]="SMALL"></app-display-icon>
-        </span>
-
+      </div>
+      <div class="s-card-health-lower-container">
         <span *ngIf="card.showIfHealthIsLowerThan !== undefined">
-          <=
           {{ card.showIfHealthIsLowerThan }}
         </span>
       </div>
     </div>
 
-    <div class="s-card-title">
-      <h4 class="m-0">{{ card.title }}</h4>
+    <img class="s-card-img" src="/assets/card/Rocket.jpg"/>
+
+    <div class="s-card-content">
+      <div>
+        <div style="height: 27px;" #cardTitleContainer>
+          <span class="s-card-title" #cardTitle>
+            {{ card.title }}
+          </span>
+        </div>
+        <div style="height: 50px;" #cardDescriptionContainer>
+          <span class="s-card-description" #cardDescription>
+            {{ card.descriptionGame(gameState) }}
+          </span>
+        </div>
+      </div>
     </div>
 
-    <div class="s-card-description">
-      {{ card.descriptionGame(gameState) }}
-    </div>
   </div>
 </div>

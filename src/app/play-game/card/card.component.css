@@ -1,105 +1,61 @@
 .s-card {
-  background: white;
-  padding: 5px;
-  height: 165px;
+  height: 218px;
   width: 156px;
-  border-radius: 5px;
+  position: relative;
 }
 
-.s-card-container {
-  background-color: black;
-  border-radius: 5px;
-  height: 100%;
-}
 
-.can-be-bought {
-  background-color: #0F8B8D;
-}
 
-.can-not-be-bought {
-  background: #A8201A;
-}
-
-.shake {
-  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
-
-.can-be-bought:hover {
-  box-shadow: 5px 5px 30px 7px rgba(var(--bs-primary-rgb), 0.1), -5px -5px 30px 7px rgba(var(--bs-primary-rgb), 0.1) !important;
-}
-
-.s-card-top-container {
+.s-card-top {
+  position: absolute;
   display: flex;
-  margin-bottom: -5px;
+  z-index: 1;
+  padding: 0 !important;
+  margin: 7px 0 0 0 !important;
+}
+
+.s-card-top div {
+  padding: 0 !important;
+  margin: 0 !important;
+  position: relative;
+  text-align: center;
+  width: 18px;
 }
 
 .s-card-cost-container {
-  position: relative;
-  top: -5px;
-  left: -5px;
-  width: 26px;
+  left: 12px;
 }
 
-.s-card-cost-container > span {
-  color: black;
-  background: #EC9A29;
-  height: 26px;
-  width: 26px;
-  line-height: 26px;
-  display: inline-block;
+.s-card-health-higher-container {
+  right: -85px;
+}
+
+.s-card-health-lower-container {
+  right: -90px;
+}
+
+
+
+.s-card-img {
+  position: relative;
+  height: 120px;
+  width: 156px;
+  z-index: 0;
+  border-radius: 5px;
+}
+
+
+
+.s-card-content {
+  position: relative;
+  z-index: 2;
   text-align: center;
-  margin-right: 6px;
-}
-
-.s-card-min-max-health-container {
-  position: relative;
-  top: -5px;
-  right: -5px;
-  background: #A8201A;
-  color: black;
+  padding-top: 7px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .s-card-title {
+  font-weight: 500;
+  line-height: 23px;
 }
-
-.s-card-image-container {
-  width: 100%;
-  height: auto;
-  display: flex;
-}
-
-.s-card-image-container > img {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.s-card-title {
-  text-align: center;
-}
-
-.s-card-description {
-  text-align: center;
-}
-

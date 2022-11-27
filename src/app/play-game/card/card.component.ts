@@ -1,7 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {trigger, state, style, transition, animate} from '@angular/animations';
+import {AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Card} from "../../backend/card";
-import {IconSize, IconType} from "../display-icon/display-icon.component";
 import {GameState} from "../../backend/game-state";
 
 @Component({
@@ -17,7 +16,7 @@ import {GameState} from "../../backend/game-state";
     ])
   ]
 })
-export class CardComponent implements OnInit {
+export class CardComponent implements AfterViewInit {
   @Input() card: Card;
   @Input() disableCard: boolean;
   @Input() gameState: GameState;
@@ -26,15 +25,28 @@ export class CardComponent implements OnInit {
   classes: String[] = []
   flipState = "inactive"
 
-  HEART = IconType.HEART
-  SMALL = IconSize.SMALL
+  @ViewChild('cardTitleContainer') cardTitleContainer: ElementRef;
+  @ViewChild('cardTitle') cardTitle: ElementRef;
+  @ViewChild('cardDescriptionContainer') cardDescriptionContainer: ElementRef;
+  @ViewChild('cardDescription') cardDescription: ElementRef;
 
-  ngOnInit(): void {
-    if (this.canBeBought()) {
-      this.classes.push("can-be-bought")
-    } else {
-      this.classes.push("can-not-be-bought")
+  ngAfterViewInit(): void {
+    this.resizeTextToFitContainer(this.cardTitleContainer, this.cardTitle, 20);
+    this.resizeTextToFitContainer(this.cardDescriptionContainer, this.cardDescription, 20);
+  }
+
+  private resizeTextToFitContainer(container: ElementRef, text: ElementRef, maxSize: number) {
+    // https://dev.to/jankapunkt/make-text-fit-it-s-parent-size-using-javascript-m40
+    let i = 5;
+    let overflow = false;
+    while (!overflow && i < maxSize) {
+      text.nativeElement.style.fontSize = i + "px"
+      // For some reason we need to do -1 on the scroll height.
+      overflow = (container.nativeElement.scrollHeight - 1 > container.nativeElement.clientHeight)
+      if (!overflow) i++;
     }
+    // We subtract 2 from the final result to ensure the text has some slight distance to the edge.
+    text.nativeElement.style.fontSize = (i-2) + "px"
   }
 
   canBeBought() {
@@ -57,4 +69,6 @@ export class CardComponent implements OnInit {
     this.flipState = "active"
     setTimeout(() => this.selectCard.emit(this.card.cardId), 500);
   }
+
+
 }
