@@ -15,7 +15,7 @@
 			]
 		}
 	},
-	"postCreateCommand": "npm install",
+	"onCreateCommand": "npm install && ng completion",
 	"forwardPorts": [ 4200 ]
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
