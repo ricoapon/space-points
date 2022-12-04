@@ -74,12 +74,12 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Big Bomb",
-      descriptionGame: (gameState: GameState) => "Destroy " + (gameState.remoteBombCounter + 1) * 10 + " enemy flagships. (Increases per use)",
-      descriptionManual: "Destroy 10 enemy flagships for every time you played this card.",
+      descriptionGame: (gameState: GameState) => "Destroy " + (gameState.remoteBombCounter + 1) * (gameState.remoteBombCounter + 1) * 5 + " enemy flagships. (Increases exponentially per use)",
+      descriptionManual: "Destroy 5*n*n enemy flagships where n is the number of times you played this card.",
       cost: 15,
       execute: (gameState: GameState) => {
         gameState.remoteBombCounter += 1
-        gameState.points += gameState.remoteBombCounter * 10
+        gameState.points += gameState.remoteBombCounter * gameState.remoteBombCounter * 5
       },
       showIfHealthIsLowerThan: 17,
     },
@@ -150,21 +150,21 @@ export function allCardsWithoutProduce(): Card[] {
     {
       cardId: cardId++,
       title: "Temporary Upgrade",
-      descriptionGame: () => "Destroy 1 flagship for each small laser and gain 1 HP",
-      descriptionManual: "Destroy 1 flagship for each small laser and gain 1 HP",
-      cost: 50,
+      descriptionGame: () => "Destroy 2 flagships for each small laser and gain 1 HP",
+      descriptionManual: "Destroy 2 flagships for each small laser and gain 1 HP",
+      cost: 40,
       execute: (gameState: GameState) => {
-        gameState.points += gameState.smallLasers
+        gameState.points += gameState.smallLasers * 2
         gameState.health += 1
       },
-      showIfHealthIsLowerThan: 5,
+      showIfHealthIsLowerThan: 10,
     },
     {
       cardId: cardId++,
       title: "Seeing Double",
       descriptionGame: () => "Double the number of big lasers",
       descriptionManual: "Double the number of big lasers",
-      cost: 30,
+      cost: 45,
       execute: (gameState: GameState) => {
         gameState.bigLasers += gameState.bigLasers
       },
