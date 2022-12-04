@@ -69,7 +69,6 @@ export function allCardsWithoutProduce(): Card[] {
       execute: (gameState: GameState) => {
         gameState.smallLasers += 10
       },
-      showIfHealthIsLowerThan: 17,
     },
     {
       cardId: cardId++,
@@ -81,7 +80,6 @@ export function allCardsWithoutProduce(): Card[] {
         gameState.remoteBombCounter += 1
         gameState.points += gameState.remoteBombCounter * gameState.remoteBombCounter * 5
       },
-      showIfHealthIsLowerThan: 17,
     },
     {
       cardId: cardId++,
@@ -104,7 +102,6 @@ export function allCardsWithoutProduce(): Card[] {
       execute: (gameState: GameState) => {
         gameState.bigLasers += 5
       },
-      showIfHealthIsLowerThan: 17,
     },
     {
       cardId: cardId++,
@@ -117,7 +114,6 @@ export function allCardsWithoutProduce(): Card[] {
         gameState.bigLasers += 3
         gameState.health += 1
       },
-      showIfHealthIsLowerThan: 17,
       canBeBought: (gameState: GameState) => {
         return gameState.smallLasers >= 3
       }
@@ -164,7 +160,7 @@ export function allCardsWithoutProduce(): Card[] {
       title: "Seeing Double",
       descriptionGame: () => "Double the number of big lasers",
       descriptionManual: "Double the number of big lasers",
-      cost: 45,
+      cost: 60,
       execute: (gameState: GameState) => {
         gameState.bigLasers += gameState.bigLasers
       },
