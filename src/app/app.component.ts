@@ -44,11 +44,13 @@ export class AppComponent implements AfterViewInit {
   private createStars(type: number, quantity: number, bottom: () => number) {
     for (let i = 0; i < quantity; i++) {
       let star = document.createElement('div');
+      let animationDuration = this.randomNumber(75, 150)
       star.classList.add('star', 'type' + type)
-      star.style.animationDuration = this.randomNumber(75, 150) + "s";
+      star.style.animationDuration = animationDuration + "s";
       star.style.left = this.randomNumber(1, 99) + "%";
       star.style.bottom = bottom() + "%";
       document.body.appendChild(star);
+       setTimeout(() => document.body.removeChild(star), animationDuration * 1000)
     }
   }
 
