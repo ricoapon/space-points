@@ -12,7 +12,6 @@ export class TutorialContainerComponent implements OnInit {
 
   MENU = IconType.MENU
   POINT = IconType.POINT
-  FIRE_LASERS = IconType.FIRE_LASERS
   HEART = IconType.HEART
   MONEY = IconType.MONEY
   SMALL_LASERS = IconType.SMALL_LASERS

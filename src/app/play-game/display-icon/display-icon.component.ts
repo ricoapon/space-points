@@ -6,7 +6,6 @@ export enum IconType {
   SMALL_LASERS,
   BIG_LASERS,
   HEART,
-  FIRE_LASERS,
   MENU,
 }
 
