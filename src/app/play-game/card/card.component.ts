@@ -54,6 +54,13 @@ export class CardComponent implements AfterViewInit {
       (this.card.canBeBought == undefined || this.card.canBeBought(this.gameState));
   }
 
+  cardImage(): String {
+    if (this.card.cardId == -1) {
+      return '/assets/card/FireLasers.png'
+    }
+    return '/assets/card/Rocket.jpg';
+  }
+
   clickOnCard() {
     if (this.disableCard) {
       return
