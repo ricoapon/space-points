@@ -1,0 +1,13 @@
+{
+	"name": "Space Points",
+	"start_url": "/index.html",
+	"display": "fullscreen",
+	"orientation": "portrait",
+	"icons": [
+		{
+			"src": "favicon.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
