@@ -1,0 +1,85 @@
+{
+  "configVersion": 1,
+  "timestamp": 1672770849564,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/index.html",
+        "/main.90ea510ae9e7365d.js",
+        "/manifest.webmanifest",
+        "/polyfills.5bb9aa79ca4900b7.js",
+        "/runtime.69429fc8adc728a5.js",
+        "/styles.2e77b2b13a7cc6c8.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/background.svg",
+        "/assets/card/FireLasers.png",
+        "/assets/card/Rocket.jpg",
+        "/assets/icons/big_lasers.svg",
+        "/assets/icons/heart.svg",
+        "/assets/icons/menu.svg",
+        "/assets/icons/money.svg",
+        "/assets/icons/point.svg",
+        "/assets/icons/small_lasers.svg",
+        "/background.ab6023ad9cdd5fdf.svg",
+        "/favicon.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/background.svg": "cd8c2e3caf2b45c13d372e170c22a8e2391e85d8",
+    "/assets/card/FireLasers.png": "9cf72a87aaa66d8bbf3c663aa05c881a9550108b",
+    "/assets/card/Rocket.jpg": "baa2b9cd482a613a70353b4f63482581a3033861",
+    "/assets/icons/big_lasers.svg": "ce37301811ab3e9717e8cad32beb436b5b2ecc75",
+    "/assets/icons/heart.svg": "8012fd2ffec33fb50b895b44811faec411201333",
+    "/assets/icons/menu.svg": "b7e43cbd1c2666ead4ddbce5871c9d7c95052d79",
+    "/assets/icons/money.svg": "8a969e70d63883edbce73858f7e79ccaf8cc2996",
+    "/assets/icons/point.svg": "8855a659033ee18b4c9c4839c51ba7fe424605d1",
+    "/assets/icons/small_lasers.svg": "ca4af2c71d4805886eafc17de4340db4421b8d9d",
+    "/background.ab6023ad9cdd5fdf.svg": "cd8c2e3caf2b45c13d372e170c22a8e2391e85d8",
+    "/favicon.png": "7b017690f85f5cf5f8571fd5c7a0dacd02b07cfb",
+    "/index.html": "e6dacaf1da3f9099a25b9963242372e1ed202a66",
+    "/main.90ea510ae9e7365d.js": "794fc1d9ff5f17e8e275f268610354a361009066",
+    "/manifest.webmanifest": "2a13fa521f7ff483b55b5a4d3f5ca45fb1dc880f",
+    "/polyfills.5bb9aa79ca4900b7.js": "77a255a2cee31b4ec27677ff6ff88bb8a3fe3340",
+    "/runtime.69429fc8adc728a5.js": "c3e688309df9665e8f78d667e8eec4a0518cfaef",
+    "/styles.2e77b2b13a7cc6c8.css": "e9d7af4bfed2bced8aa8a16502547940f33371ba"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
