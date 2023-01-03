@@ -1,13 +1,17 @@
 {
-	"name": "Space Points",
-	"start_url": "/index.html",
-	"display": "fullscreen",
-	"orientation": "portrait",
-	"icons": [
-		{
-			"src": "favicon.png",
-			"sizes": "512x512",
-			"type": "image/png"
-		}
-	]
+  "name": "Space Points",
+  "short_name": "Space Points",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
 }

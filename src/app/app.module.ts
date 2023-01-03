@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, isDevMode} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
@@ -19,6 +19,7 @@ import {HighscoreScreenComponent} from './highscore-screen/highscore-screen.comp
 import {SubmitHighscoreScreenComponent} from './submit-highscore-screen/submit-highscore-screen.component';
 import {FormsModule} from "@angular/forms";
 import {FrameComponent} from './play-game/card/frame/frame.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,12 @@ import {FrameComponent} from './play-game/card/frame/frame.component';
     NgbModule,
     HttpClientModule,
     FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
