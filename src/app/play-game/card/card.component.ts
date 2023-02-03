@@ -55,10 +55,7 @@ export class CardComponent implements AfterViewInit {
   }
 
   cardImage(): String {
-    if (this.card.cardId == -1) {
-      return '/assets/card/FireLasers.png'
-    }
-    return '/assets/card/Rocket.jpg';
+    return '/assets/card/' + this.card.title.replace(/ /g, '') + '.png'
   }
 
   clickOnCard() {
