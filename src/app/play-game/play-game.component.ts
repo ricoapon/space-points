@@ -17,7 +17,7 @@ export class PlayGameComponent implements OnInit {
 
   constructor(game: Game, private modalService: NgbModal, private cookieService: CookieService, private router: Router) {
     this.game = game;
-    this.shownCards = this.game.start();
+    this.shownCards = this.game.start(this.cookieService.get("show_small_cards") == 'true');
   }
 
   ngOnInit(): void {

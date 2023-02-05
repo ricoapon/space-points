@@ -5,6 +5,7 @@ import {DOCUMENT} from "@angular/common";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {Router} from "@angular/router";
 import {TutorialContainerComponent} from "../tutorial-container/tutorial-container.component";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-dashboard',
@@ -24,7 +25,7 @@ export class DashboardComponent implements OnInit {
   elem: any;
   isFullScreen = false;
 
-  constructor(@Inject(DOCUMENT) private document: any, private modalService: NgbModal, private router: Router) {
+  constructor(@Inject(DOCUMENT) private document: any, private modalService: NgbModal, private router: Router, private cookieService: CookieService) {
   }
 
   ngOnInit(): void {
@@ -91,5 +92,11 @@ export class DashboardComponent implements OnInit {
 
   startTutorial() {
     this.modalService.open(TutorialContainerComponent, {centered: true})
+  }
+
+  toggleCardSize() {
+    this.gameState.showSmallCards = !this.gameState.showSmallCards
+    this.cookieService.set('show_small_cards', String(this.gameState.showSmallCards), 365)
+    this.gameState.showSmallCardsChange.emit()
   }
 }

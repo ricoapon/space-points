@@ -1,13 +1,17 @@
 <!--suppress HtmlRequiredAltAttribute -->
 <div class="s-card"
      (click)="clickOnCard()"
+     [style]="determineHeight()"
      [@flipState]="flipState"
      [class]="classes.join(' ')">
   <div class="s-card-container">
 
-    <app-frame [canBeBought]="canBeBought()"
+    <app-frame *ngIf="!gameState.showSmallCards" [canBeBought]="canBeBought()"
                [showIfHealthIsHigherThan]="card.showIfHealthIsHigherThan !== undefined"
                [showIfHealthIsLowerThan]="card.showIfHealthIsLowerThan !== undefined"></app-frame>
+    <app-frame-small *ngIf="gameState.showSmallCards" [canBeBought]="canBeBought()"
+               [showIfHealthIsHigherThan]="card.showIfHealthIsHigherThan !== undefined"
+               [showIfHealthIsLowerThan]="card.showIfHealthIsLowerThan !== undefined"></app-frame-small>
 
     <div class="s-card-top w-100">
       <div class="s-card-cost-container">
@@ -30,7 +34,7 @@
 
     <img class="s-card-img" [src]="cardImage()"/>
 
-    <div class="s-card-content">
+    <div class="s-card-content" *ngIf="!gameState.showSmallCards">
       <div>
         <div style="height: 27px;" #cardTitleContainer>
           <span class="s-card-title" #cardTitle>

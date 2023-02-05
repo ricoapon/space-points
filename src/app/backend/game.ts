@@ -23,8 +23,8 @@ export class Game {
     return this.gameState;
   }
 
-  public start(): Card[] {
-    this.gameState = new GameState();
+  public start(showSmallCards: boolean): Card[] {
+    this.gameState = new GameState(showSmallCards);
     this.randomizer = new Randomizer();
     return this.determineNextCards();
   }

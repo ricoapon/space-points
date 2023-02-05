@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {AfterViewChecked, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Card} from "../../backend/card";
 import {GameState} from "../../backend/game-state";
@@ -16,7 +16,7 @@ import {GameState} from "../../backend/game-state";
     ])
   ]
 })
-export class CardComponent implements AfterViewInit {
+export class CardComponent implements AfterViewChecked {
   @Input() card: Card;
   @Input() disableCard: boolean;
   @Input() gameState: GameState;
@@ -30,9 +30,11 @@ export class CardComponent implements AfterViewInit {
   @ViewChild('cardDescriptionContainer') cardDescriptionContainer: ElementRef;
   @ViewChild('cardDescription') cardDescription: ElementRef;
 
-  ngAfterViewInit(): void {
-    this.resizeTextToFitContainer(this.cardTitleContainer, this.cardTitle, 20);
-    this.resizeTextToFitContainer(this.cardDescriptionContainer, this.cardDescription, 20);
+  ngAfterViewChecked(): void {
+    if (!this.gameState.showSmallCards && this.cardTitleContainer) {
+      this.resizeTextToFitContainer(this.cardTitleContainer, this.cardTitle, 20);
+      this.resizeTextToFitContainer(this.cardDescriptionContainer, this.cardDescription, 20);
+    }
   }
 
   private resizeTextToFitContainer(container: ElementRef, text: ElementRef, maxSize: number) {
@@ -75,4 +77,11 @@ export class CardComponent implements AfterViewInit {
   }
 
 
+  determineHeight(): any {
+    if (this.gameState.showSmallCards) {
+      return {height: '120px'}
+    } else {
+      return {height: '218px'}
+    }
+  }
 }

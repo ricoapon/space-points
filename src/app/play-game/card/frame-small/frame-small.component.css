@@ -1,0 +1,12 @@
+.card-frame {
+  position: absolute;
+  z-index: 1;
+}
+
+.can-be-bought {
+  fill: #0F8B8D
+}
+
+.can-not-be-bought {
+  fill: #A8201A
+}

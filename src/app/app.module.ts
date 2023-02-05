@@ -1,4 +1,4 @@
-import {NgModule, isDevMode} from '@angular/core';
+import {isDevMode, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
@@ -19,7 +19,8 @@ import {HighscoreScreenComponent} from './highscore-screen/highscore-screen.comp
 import {SubmitHighscoreScreenComponent} from './submit-highscore-screen/submit-highscore-screen.component';
 import {FormsModule} from "@angular/forms";
 import {FrameComponent} from './play-game/card/frame/frame.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import {ServiceWorkerModule} from '@angular/service-worker';
+import {FrameSmallComponent} from "./play-game/card/frame-small/frame-small.component";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     TutorialContainerComponent,
     HighscoreScreenComponent,
     SubmitHighscoreScreenComponent,
-    FrameComponent
+    FrameComponent,
+    FrameSmallComponent
   ],
   imports: [
     BrowserModule,
