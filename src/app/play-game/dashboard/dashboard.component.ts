@@ -84,7 +84,9 @@ export class DashboardComponent implements OnInit {
           this.startTutorial()
         }
       },
-    );
+    ).catch(() => {
+      // When somebody clicks outside the modal, it closes the modal and throws an error. We don't care.
+    });
   }
 
   startTutorial() {
